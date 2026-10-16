@@ -1,151 +1,65 @@
-
 <!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#17211d">
+<meta name="theme-color" content="#17211D">
+<meta name="description" content="NEXORA — Gastronomic Intelligence. Ciencia, precisión y dominio gastronómico.">
 <title>NEXORA | Gastronomic Intelligence</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2317211D'/%3E%3Cpath d='M22 76V24L78 76V24' fill='none' stroke='%23B5A06A' stroke-width='8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:dark;--bg:#101613;--panel:#1b241e;--line:#39473a;--text:#f1f2e9;--muted:#aab5a8;--olive:#b0bf83;--gold:#d9c18c}
-*{box-sizing:border-box}
-body{margin:0;background:radial-gradient(ellipse at 85% 0,#2b3a2c,transparent 45%),var(--bg);color:var(--text);font:15px/1.5 system-ui,Segoe UI,sans-serif}
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
-.layout{min-height:100vh;display:grid;grid-template-columns:245px 1fr}
-aside{padding:28px 18px;background:#111815;border-right:1px solid var(--line)}
-.brand{font-size:25px;font-weight:850;letter-spacing:.16em}
-.sub{font-size:10px;letter-spacing:.18em;color:var(--olive)}
-hr{border:0;border-top:1px solid var(--line);margin:25px 0}
-nav{display:grid;gap:7px;margin-top:20px}
-nav button{background:transparent;border:1px solid transparent;color:var(--muted);text-align:left;padding:12px;border-radius:8px}
-nav button.active,nav button:hover{background:#28352b;border-color:#465740;color:white}
-.note-side{margin-top:45px;font-size:11px;color:var(--muted)}
-main{padding:30px clamp(16px,4vw,55px);max-width:1450px;width:100%;margin:auto}
-header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:28px}
-.eyebrow{color:var(--olive);font-size:11px;letter-spacing:.17em;text-transform:uppercase}
-h1{font-size:clamp(26px,3vw,36px);line-height:1.2;margin:8px 0}
-h2{font-size:18px;margin:0 0 8px}
-.muted{color:var(--muted)}
-.small{font-size:12px}
-.status{font-size:11px;border:1px solid var(--line);border-radius:30px;padding:8px 12px;color:var(--muted);white-space:nowrap}
-.status:before{content:"";display:inline-block;width:7px;height:7px;background:var(--gold);border-radius:50%;margin-right:7px}
-.hero,.card{border:1px solid var(--line);border-radius:14px;background:linear-gradient(140deg,#202b23,#171e19);padding:23px}
-.hero{padding:clamp(24px,4vw,45px);margin-bottom:16px;position:relative;overflow:hidden}
-.hero:after{content:"N";position:absolute;right:4%;top:-80px;font-size:270px;font-weight:900;color:#fff;opacity:.025}
-.hero h2{font-size:clamp(27px,4vw,42px);line-height:1.15;margin:15px 0}
-.hero p{max-width:580px;color:#bbc5b8}
-.tag{display:inline-block;border:1px solid #586847;border-radius:5px;padding:4px 8px;color:var(--olive);font-size:10px;letter-spacing:.12em}
-.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
-.c4{grid-column:span 4}.c6{grid-column:span 6}.c12{grid-column:span 12}
-.metric{font-size:26px;font-weight:750;margin:16px 0 2px}
-.btn{border:0;background:var(--olive);color:#182018;font-weight:750;padding:11px 15px;border-radius:8px;margin-top:12px}
-.btn.alt{background:transparent;border:1px solid var(--line);color:var(--text)}
-.field{display:grid;gap:6px;margin:13px 0}
-label{font-size:12px;color:var(--muted)}
-input,select,textarea{width:100%;padding:11px 12px;background:#111813;border:1px solid #405040;border-radius:8px;color:var(--text)}
-textarea{min-height:100px;resize:vertical}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.section{display:none}.section.active{display:block}
-.item{padding:13px;border:1px solid #354337;background:#131a15;border-radius:9px;margin-top:10px;overflow-wrap:anywhere}
-.item small{display:block;color:var(--muted);margin-top:4px}
-.result{margin-top:14px;padding:14px;background:#111912;border:1px solid #42513c;border-radius:9px}
-.result strong{font-size:24px;color:var(--gold)}
-.empty{padding:24px;text-align:center;color:var(--muted);border:1px dashed #465346;border-radius:9px;margin-top:14px}
-footer{font-size:11px;color:#829082;margin-top:25px}
-@media(max-width:850px){.layout{grid-template-columns:1fr}aside{padding:15px;border-right:0;border-bottom:1px solid var(--line)}hr,.note-side{display:none}nav{display:flex;overflow-x:auto;margin-top:12px}nav button{white-space:nowrap;padding:9px}main{padding:22px 15px}.c4,.c6{grid-column:span 12}}
-@media(max-width:460px){header{align-items:flex-start;flex-direction:column}.row{grid-template-columns:1fr}}
+:root{color-scheme:dark;--bg:#17211D;--panel:#202B25;--line:#3B493F;--text:#E8E8DC;--muted:#B8C0B5;--gold:#B5A06A;--ivory:#E8E8DC;--sage:#657365;--deep:#121A16}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 84% 0,rgba(101,115,101,.22),transparent 42%),var(--bg);color:var(--text);font:15px/1.55 Montserrat,system-ui,Segoe UI,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.layout{min-height:100vh;display:grid;grid-template-columns:258px 1fr}
+aside{padding:28px 18px;background:rgba(18,26,22,.96);border-right:1px solid var(--line);display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:11px;font-size:23px;font-weight:600;letter-spacing:.19em;color:var(--ivory)}.brand-mark{width:42px;height:42px;display:grid;place-items:center;color:var(--gold);flex:0 0 auto}.brand-mark svg{width:100%;height:100%;filter:drop-shadow(0 2px 5px rgba(181,160,106,.14))}.brand-word small{display:block;color:var(--gold);font-size:8px;letter-spacing:.16em;font-weight:600;margin-top:4px;white-space:nowrap}hr{border:0;border-top:1px solid var(--line);margin:26px 0}.eyebrow{color:var(--gold);font-size:10px;letter-spacing:.19em;text-transform:uppercase}.subtle-label{font-size:11px;color:var(--muted)}nav{display:grid;gap:7px;margin-top:18px}nav button{background:transparent;border:1px solid transparent;color:var(--muted);text-align:left;padding:12px;border-radius:5px;transition:background .18s,border-color .18s,color .18s}nav button.active,nav button:hover{background:#27342B;border-color:var(--gold);color:var(--ivory)}.note-side{margin-top:auto;padding-top:40px;font-size:10px;letter-spacing:.12em;line-height:1.9;color:var(--muted)}main{padding:30px clamp(16px,4vw,55px);max-width:1500px;width:100%;margin:auto}header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:28px}h1{font-size:clamp(26px,3vw,36px);line-height:1.2;margin:8px 0;font-weight:700;letter-spacing:-.035em}h2{font-size:18px;margin:0 0 8px;font-weight:700;letter-spacing:-.02em}.muted{color:var(--muted)}.small{font-size:12px}.status{font-size:10px;letter-spacing:.12em;border:1px solid var(--line);border-radius:3px;padding:9px 12px;color:var(--muted);white-space:nowrap}.status:before{content:"";display:inline-block;width:6px;height:6px;background:var(--gold);margin-right:8px;vertical-align:1px}.hero,.card{border:1px solid rgba(181,160,106,.28);border-radius:8px;background:linear-gradient(140deg,rgba(32,43,37,.98),rgba(24,33,28,.98));padding:23px;box-shadow:0 12px 35px rgba(0,0,0,.08)}.hero{padding:clamp(24px,4vw,45px);margin-bottom:16px;position:relative;overflow:hidden;background:linear-gradient(120deg,rgba(18,26,22,.98),rgba(32,43,37,.9));}.hero:after{content:"N";position:absolute;right:5%;top:-65px;font-family:Montserrat,sans-serif;font-size:270px;font-weight:500;letter-spacing:-.12em;color:transparent;-webkit-text-stroke:1px rgba(181,160,106,.24);opacity:.42;pointer-events:none}.hero h2{font-size:clamp(29px,4vw,45px);line-height:1.14;margin:18px 0;max-width:720px;letter-spacing:-.04em}.hero p{max-width:600px;color:#C3C9BF}.brand-tagline{font:italic 17px/1.5 "Playfair Display",Georgia,serif;color:var(--gold)!important;margin-top:22px}.tag{display:inline-block;border:1px solid var(--sage);border-radius:2px;padding:5px 9px;color:var(--gold);font-size:10px;letter-spacing:.14em}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}.c4{grid-column:span 4}.c6{grid-column:span 6}.c12{grid-column:span 12}.metric{font-size:25px;font-weight:700;margin:16px 0 2px;letter-spacing:-.03em}.btn{border:1px solid var(--gold);background:var(--gold);color:#17211D;font-weight:700;font-size:12px;letter-spacing:.02em;padding:11px 15px;border-radius:4px;margin-top:12px;transition:filter .18s,transform .18s}.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.btn.alt{background:transparent;border:1px solid var(--line);color:var(--text)}.btn.alt:hover{border-color:var(--gold)}.field{display:grid;gap:6px;margin:13px 0}label{font-size:12px;color:var(--muted)}input,select,textarea{width:100%;padding:11px 12px;background:#121A16;border:1px solid #465449;border-radius:4px;color:var(--text);outline:none}input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 2px rgba(181,160,106,.12)}textarea{min-height:100px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.section{display:none}.section.active{display:block;animation:fade .22s ease}@keyframes fade{from{opacity:.6;transform:translateY(3px)}to{opacity:1;transform:none}}.item{padding:13px;border:1px solid #354337;background:#151D18;border-radius:4px;margin-top:10px;overflow-wrap:anywhere}.item small{display:block;color:var(--muted);margin-top:4px}.result{margin-top:14px;padding:14px;background:#121A16;border:1px solid #465449;border-radius:4px}.result strong{font-size:24px;color:var(--gold)}.empty{padding:24px;text-align:center;color:var(--muted);border:1px dashed #465346;border-radius:4px;margin-top:14px}footer{font-size:10px;letter-spacing:.1em;color:#9DA89B;margin-top:28px;padding-top:16px;border-top:1px solid var(--line)}.section-intro{margin-bottom:16px}.section-intro p{margin:4px 0 0}.rule{height:1px;background:var(--line);margin:18px 0}
+@media(max-width:950px){.layout{grid-template-columns:1fr}aside{padding:15px;border-right:0;border-bottom:1px solid var(--line)}hr,.note-side{display:none}nav{display:flex;overflow-x:auto;margin-top:14px}nav button{white-space:nowrap;padding:10px 12px}main{padding:22px 15px}.c4,.c6{grid-column:span 12}.brand{font-size:21px}.brand-mark{width:37px;height:37px}}@media(max-width:460px){header{align-items:flex-start;flex-direction:column}.row{grid-template-columns:1fr}.status{white-space:normal}.hero:after{right:-8%;font-size:210px}}
 </style>
 </head>
 <body>
 <div class="layout">
 <aside>
-  <div class="brand">NEXORA</div>
-  <div class="sub">GASTRONOMIC INTELLIGENCE</div>
+  <div class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" role="img" aria-label="NEXORA"><path d="M10 52V12L54 52V12" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="square"/><path d="M10 12L54 52" fill="none" stroke="#E8D7A8" stroke-width="2" opacity=".9"/><path d="M22 12L54 40" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"/></svg></span><span class="brand-word">NEXORA<small>GASTRONOMIC INTELLIGENCE</small></span></div>
   <hr>
   <div class="eyebrow">Espacio de trabajo</div>
-  <nav>
+  <nav aria-label="Navegación principal">
     <button class="active" data-page="inicio">⌂ &nbsp; Inicio</button>
     <button data-page="herramientas">⌁ &nbsp; Herramientas</button>
     <button data-page="bitacora">▤ &nbsp; Bitácora</button>
     <button data-page="acerca">✳ &nbsp; Proyecto</button>
   </nav>
-  <div class="note-side">CIENCIA · PRECISIÓN · DOMINIO GASTRONÓMICO</div>
+  <div class="note-side">CIENCIA · PRECISIÓN<br>DOMINIO GASTRONÓMICO</div>
 </aside>
 <main>
-<header>
-  <div><div class="eyebrow">Laboratorio gastronómico digital</div><h1 id="heading">Controla cada variable.</h1><div class="muted">Mide, documenta y perfecciona tu método.</div></div>
-  <div class="status">PROTOTIPO INICIAL</div>
-</header>
-
+<header><div><div class="eyebrow">Laboratorio gastronómico digital</div><h1 id="heading">Controla cada variable.</h1><div class="muted">Mide, documenta y perfecciona tu método.</div></div><div class="status">ENTORNO DE TRABAJO</div></header>
 <section id="inicio" class="section active">
-  <div class="hero">
-    <span class="tag">GASTRONOMIC INTELLIGENCE</span>
-    <h2>La intuición inspira.<br>La precisión transforma.</h2>
-    <p>Un espacio de trabajo para aplicar ciencia, técnica y control a los procesos gastronómicos profesionales.</p>
-  </div>
+  <div class="hero"><span class="tag">CIENCIA · MÉTODO · EXCELENCIA</span><h2>La intuición inspira.<br>La precisión transforma.</h2><p>Un espacio de trabajo para aplicar ciencia, técnica y control a los procesos gastronómicos profesionales.</p><p class="brand-tagline">Ciencia, precisión y dominio gastronómico.</p></div>
   <div class="grid">
     <div class="card c4"><div class="eyebrow">01 / Rendimiento</div><h2>Escalador de recetas</h2><div class="metric">Proporción</div><div class="muted small">Ajusta cantidades al nuevo rendimiento.</div><button class="btn alt" onclick="go('herramientas')">Abrir herramienta →</button></div>
-    <div class="card c4"><div class="eyebrow">02 / Precisión</div><h2>Conversor de peso</h2><div class="metric">g · kg · oz · lb</div><div class="muted small">Convierte cantidades con exactitud.</div><button class="btn alt" onclick="go('herramientas')">Convertir →</button></div>
+    <div class="card c4"><div class="eyebrow">02 / Precisión</div><h2>Conversor de masa</h2><div class="metric">g · kg · oz · lb</div><div class="muted small">Convierte cantidades con exactitud.</div><button class="btn alt" onclick="go('herramientas')">Convertir →</button></div>
     <div class="card c4"><div class="eyebrow">03 / Conocimiento</div><h2>Bitácora técnica</h2><div class="metric" id="count">0 notas</div><div class="muted small">Documenta pruebas y resultados.</div><button class="btn alt" onclick="go('bitacora')">Abrir bitácora →</button></div>
-    <div class="card c6"><div class="eyebrow">Método</div><h2>De la prueba al estándar</h2><div class="item"><b>01 · Medir</b><small>Define cantidades, tiempos y rendimiento.</small></div><div class="item"><b>02 · Registrar</b><small>Conserva datos de cada ensayo.</small></div><div class="item"><b>03 · Comparar</b><small>Documenta ajustes y resultados.</small></div></div>
-    <div class="card c6"><div class="eyebrow">Estado de desarrollo</div><h2>Base de trabajo</h2><p class="muted">Esta versión funciona en el navegador. Firebase, cuentas y sincronización en la nube se configurarán después.</p><span class="tag">Datos de prueba locales</span></div>
+    <div class="card c6"><div class="eyebrow">Método de trabajo</div><h2>De la prueba al estándar</h2><div class="item"><b>01 · Medir</b><small>Define cantidades, tiempos y rendimiento.</small></div><div class="item"><b>02 · Registrar</b><small>Conserva datos de cada ensayo.</small></div><div class="item"><b>03 · Comparar</b><small>Documenta ajustes y resultados.</small></div></div>
+    <div class="card c6"><div class="eyebrow">Estado del sistema</div><h2>Base de trabajo</h2><p class="muted">Las herramientas y la bitácora funcionan en este navegador. La autenticación y la sincronización en la nube aún no están conectadas.</p><span class="tag">ALMACENAMIENTO LOCAL</span></div>
   </div>
 </section>
-
-<section id="herramientas" class="section">
-<div class="grid">
-  <div class="card c6">
-    <div class="eyebrow">Herramienta 01</div><h2>Escalador de recetas</h2><p class="muted small">Calcula la cantidad ajustada de un ingrediente.</p>
-    <div class="row"><div class="field"><label>Rendimiento original</label><input id="base" type="number" min=".001" step="any" value="10"></div><div class="field"><label>Rendimiento deseado</label><input id="target" type="number" min=".001" step="any" value="25"></div></div>
-    <div class="field"><label>Ingrediente</label><input id="ingredient" placeholder="Ej. Harina de fuerza"></div>
-    <div class="row"><div class="field"><label>Cantidad original</label><input id="amount" type="number" min="0" step="any" value="500"></div><div class="field"><label>Unidad</label><select id="unit"><option>g</option><option>kg</option><option>ml</option><option>L</option><option>unidades</option><option>oz</option></select></div></div>
-    <button class="btn" onclick="scale()">Calcular cantidad</button><div id="scaled" class="result" hidden></div>
-  </div>
-  <div class="card c6">
-    <div class="eyebrow">Herramienta 02</div><h2>Conversor de masa</h2><p class="muted small">Conversión entre gramos, kilogramos, onzas y libras.</p>
-    <div class="field"><label>Cantidad</label><input id="val" type="number" min="0" step="any" value="1000"></div>
-    <div class="row"><div class="field"><label>De</label><select id="from"><option value="g">Gramos (g)</option><option value="kg">Kilogramos (kg)</option><option value="oz">Onzas (oz)</option><option value="lb">Libras (lb)</option></select></div><div class="field"><label>A</label><select id="to"><option value="kg">Kilogramos (kg)</option><option value="g">Gramos (g)</option><option value="oz">Onzas (oz)</option><option value="lb">Libras (lb)</option></select></div></div>
-    <button class="btn" onclick="convert()">Convertir</button><div id="converted" class="result" hidden></div>
-  </div>
-</div>
-</section>
-
-<section id="bitacora" class="section">
-<div class="grid">
-  <div class="card c6"><div class="eyebrow">Registro de laboratorio</div><h2>Nueva nota técnica</h2>
-    <div class="field"><label>Título</label><input id="ntitle" maxlength="100" placeholder="Ej. Prueba de hidratación al 72 %"></div>
-    <div class="field"><label>Área gastronómica</label><select id="area"><option>Cocina</option><option>Panadería</option><option>Pastelería</option><option>Bebidas y mixología</option><option>Café</option><option>Procesos y gestión</option></select></div>
-    <div class="field"><label>Observaciones y resultados</label><textarea id="body" maxlength="1500" placeholder="Variables, resultados y próximos ajustes"></textarea></div>
-    <button class="btn" onclick="saveNote()">Guardar nota</button>
-    <p class="muted small">Las notas se guardan en el almacenamiento local de este navegador.</p>
-  </div>
+<section id="herramientas" class="section"><div class="section-intro"><div class="eyebrow">Instrumentos de trabajo</div><h2>Herramientas de precisión</h2><p class="muted small">Calcula cantidades y convierte unidades con factores definidos.</p></div><div class="grid">
+  <div class="card c6"><div class="eyebrow">Herramienta 01</div><h2>Escalador de recetas</h2><p class="muted small">Calcula la cantidad ajustada de un ingrediente.</p><div class="row"><div class="field"><label for="base">Rendimiento original</label><input id="base" type="number" min=".001" step="any" value="10"></div><div class="field"><label for="target">Rendimiento deseado</label><input id="target" type="number" min=".001" step="any" value="25"></div></div><div class="field"><label for="ingredient">Ingrediente</label><input id="ingredient" placeholder="Ej. Harina de fuerza"></div><div class="row"><div class="field"><label for="amount">Cantidad original</label><input id="amount" type="number" min="0" step="any" value="500"></div><div class="field"><label for="unit">Unidad</label><select id="unit"><option>g</option><option>kg</option><option>ml</option><option>L</option><option>unidades</option><option>oz</option></select></div></div><button class="btn" onclick="scale()">Calcular cantidad</button><div id="scaled" class="result" hidden></div></div>
+  <div class="card c6"><div class="eyebrow">Herramienta 02</div><h2>Conversor de masa</h2><p class="muted small">Conversión entre gramos, kilogramos, onzas y libras.</p><div class="field"><label for="val">Cantidad</label><input id="val" type="number" min="0" step="any" value="1000"></div><div class="row"><div class="field"><label for="from">De</label><select id="from"><option value="g">Gramos (g)</option><option value="kg">Kilogramos (kg)</option><option value="oz">Onzas (oz)</option><option value="lb">Libras (lb)</option></select></div><div class="field"><label for="to">A</label><select id="to"><option value="kg">Kilogramos (kg)</option><option value="g">Gramos (g)</option><option value="oz">Onzas (oz)</option><option value="lb">Libras (lb)</option></select></div></div><button class="btn" onclick="convert()">Convertir</button><div id="converted" class="result" hidden></div></div>
+</div></section>
+<section id="bitacora" class="section"><div class="section-intro"><div class="eyebrow">Documentación profesional</div><h2>Bitácora técnica</h2><p class="muted small">Registra variables, resultados y decisiones de tus pruebas gastronómicas.</p></div><div class="grid">
+  <div class="card c6"><div class="eyebrow">Registro de laboratorio</div><h2>Nueva nota técnica</h2><div class="field"><label for="ntitle">Título</label><input id="ntitle" maxlength="100" placeholder="Ej. Prueba de hidratación al 72 %"></div><div class="field"><label for="area">Área gastronómica</label><select id="area"><option>Cocina</option><option>Panadería</option><option>Pastelería</option><option>Bebidas y mixología</option><option>Café</option><option>Procesos y gestión</option></select></div><div class="field"><label for="body">Observaciones y resultados</label><textarea id="body" maxlength="1500" placeholder="Variables, resultados y próximos ajustes"></textarea></div><button class="btn" onclick="saveNote()">Guardar nota</button><p class="muted small">Las notas se guardan en el almacenamiento local de este navegador.</p></div>
   <div class="card c6"><div class="eyebrow">Historial personal</div><h2>Notas registradas</h2><div id="notes"></div><button class="btn alt" onclick="exportNotes()">Exportar notas (.json)</button></div>
-</div>
-</section>
-
-<section id="acerca" class="section">
-<div class="card"><div class="eyebrow">Identidad del proyecto</div><h2>NEXORA — Gastronomic Intelligence</h2><p>Ciencia, precisión y dominio gastronómico.</p><p class="muted">Primera interfaz: escalador de recetas, conversor de masa y bitácora local. La autenticación y la sincronización entre dispositivos todavía no están conectadas.</p><div class="result"><strong>Siguiente fase</strong><br>Configurar Firebase Authentication y diseñar reglas seguras para Firestore antes de guardar información en la nube.</div></div>
-</section>
-<footer>NEXORA · GASTRONOMIC INTELLIGENCE · VERSIÓN INICIAL</footer>
-</main>
-</div>
+</div></section>
+<section id="acerca" class="section"><div class="card"><div class="eyebrow">Identidad institucional</div><h2>NEXORA — Gastronomic Intelligence</h2><p class="brand-tagline">Ciencia, precisión y dominio gastronómico.</p><div class="rule"></div><p><b>Propósito</b><br>Convertir conocimiento gastronómico en métodos, herramientas y sistemas de trabajo precisos.</p><p><b>Principios</b><br>Precisión · Excelencia · Criterio profesional · Innovación · Utilidad real.</p><p class="muted">La N geométrica, el verde profundo, el oro champán, el marfil y la salvia constituyen la dirección visual de esta versión.</p><div class="result"><strong>Siguiente fase</strong><br><span class="muted">Configurar Firebase Authentication y reglas seguras de Firestore antes de habilitar cuentas y sincronización entre dispositivos.</span></div></div></section>
+<footer>NEXORA · GASTRONOMIC INTELLIGENCE · CIENCIA, PRECISIÓN Y DOMINIO</footer>
+</main></div>
 <script>
-const $=id=>document.getElementById(id);
-const headings={inicio:'Controla cada variable.',herramientas:'Herramientas de precisión.',bitacora:'El conocimiento se documenta.',acerca:'Ciencia, precisión y dominio.'};
-function go(p){document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===p));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===p));$('heading').textContent=headings[p];}
-document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
-function fmt(n){return new Intl.NumberFormat('es-GT',{maximumFractionDigits:4}).format(n)}
+const $=id=>document.getElementById(id);const headings={inicio:'Controla cada variable.',herramientas:'Herramientas de precisión.',bitacora:'El conocimiento se documenta.',acerca:'Ciencia, precisión y dominio.'};
+function go(p){document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===p));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===p));$('heading').textContent=headings[p];window.scrollTo({top:0,behavior:'smooth'})}document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+function fmt(n){return new Intl.NumberFormat('es-GT',{maximumFractionDigits:4}).format(n)}function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function scale(){let b=+$('base').value,t=+$('target').value,a=+$('amount').value;if(!(b>0&&t>0&&a>=0)){alert('Revisa las cantidades y los rendimientos.');return}let n=a*t/b;$('scaled').hidden=false;$('scaled').innerHTML='<span class="muted small">Cantidad ajustada · '+escapeHTML($('ingredient').value||'Ingrediente')+'</span><br><strong>'+fmt(n)+' '+$('unit').value+'</strong><div class="muted small">Factor de escala: '+fmt(t/b)+'×</div>'}
-const grams={g:1,kg:1000,oz:28.349523125,lb:453.59237};
-function convert(){let n=+$('val').value,f=$('from').value,t=$('to').value;if(!Number.isFinite(n)||n<0){alert('Introduce una cantidad válida.');return}let out=n*grams[f]/grams[t];$('converted').hidden=false;$('converted').innerHTML='<span class="muted small">Resultado</span><br><strong>'+fmt(out)+' '+t+'</strong>'}
-function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function getNotes(){try{return JSON.parse(localStorage.getItem('nexora-notes')||'[]')}catch(e){return []}}
-function saveNote(){let title=$('ntitle').value.trim(),body=$('body').value.trim();if(!title||!body){alert('Completa el título y las observaciones.');return}let notes=getNotes();notes.unshift({title,body,area:$('area').value,date:new Date().toLocaleString('es-GT')});localStorage.setItem('nexora-notes',JSON.stringify(notes));$('ntitle').value='';$('body').value='';renderNotes();alert('Nota guardada en este navegador.')}
-function renderNotes(){let a=getNotes();$('count').textContent=a.length+' '+(a.length===1?'nota':'notas');$('notes').innerHTML=a.length?a.map((n,i)=>'<div class="item"><b>'+escapeHTML(n.title)+'</b><small>'+escapeHTML(n.area)+' · '+escapeHTML(n.date)+'</small><p>'+escapeHTML(n.body)+'</p><button class="btn alt" onclick="deleteNote('+i+')">Eliminar</button></div>').join(''):'<div class="empty">Aún no hay notas registradas.</div>'}
-function deleteNote(i){let a=getNotes();a.splice(i,1);localStorage.setItem('nexora-notes',JSON.stringify(a));renderNotes()}
-function exportNotes(){let blob=new Blob([JSON.stringify(getNotes(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='nexora-bitacora.json';a.click();URL.revokeObjectURL(url)}
-renderNotes();
+const grams={g:1,kg:1000,oz:28.349523125,lb:453.59237};function convert(){let n=+$('val').value,f=$('from').value,t=$('to').value;if(!Number.isFinite(n)||n<0){alert('Introduce una cantidad válida.');return}let out=n*grams[f]/grams[t];$('converted').hidden=false;$('converted').innerHTML='<span class="muted small">Resultado</span><br><strong>'+fmt(out)+' '+t+'</strong>'}
+function getNotes(){try{return JSON.parse(localStorage.getItem('nexora-notes')||'[]')}catch(e){return []}}function saveNote(){let title=$('ntitle').value.trim(),body=$('body').value.trim();if(!title||!body){alert('Completa el título y las observaciones.');return}let notes=getNotes();notes.unshift({title,body,area:$('area').value,date:new Date().toLocaleString('es-GT')});localStorage.setItem('nexora-notes',JSON.stringify(notes));$('ntitle').value='';$('body').value='';renderNotes();alert('Nota guardada en este navegador.')}function renderNotes(){let a=getNotes();$('count').textContent=a.length+' '+(a.length===1?'nota':'notas');$('notes').innerHTML=a.length?a.map((n,i)=>'<div class="item"><b>'+escapeHTML(n.title)+'</b><small>'+escapeHTML(n.area)+' · '+escapeHTML(n.date)+'</small><p>'+escapeHTML(n.body)+'</p><button class="btn alt" onclick="deleteNote('+i+')">Eliminar</button></div>').join(''):'<div class="empty">Aún no hay notas registradas.</div>'}function deleteNote(i){let a=getNotes();a.splice(i,1);localStorage.setItem('nexora-notes',JSON.stringify(a));renderNotes()}function exportNotes(){let blob=new Blob([JSON.stringify(getNotes(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='nexora-bitacora.json';a.click();URL.revokeObjectURL(url)}renderNotes();
 </script>
-</body>
-</html>
+</body></html>
