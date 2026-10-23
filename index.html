@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#17211D">
+<meta name="theme-color" content="#F5F5F2" id="themeColorMeta">
 <meta name="description" content="NEXORA — Gastronomic Intelligence. Ciencia, precisión y dominio gastronómico.">
 <title>NEXORA | Gastronomic Intelligence</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2317211D'/%3E%3Cpath d='M22 76V24L78 76V24' fill='none' stroke='%23B5A06A' stroke-width='8'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2324252B'/%3E%3Cpath d='M24 76V24L76 76V24' fill='none' stroke='%23C7C4F5' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -20,6 +20,28 @@ aside{padding:28px 18px;background:rgba(18,26,22,.96);border-right:1px solid var
 .pan-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}.pan-half{grid-column:span 6}.pan-full{grid-column:span 12}.ingredient-row{display:grid;grid-template-columns:minmax(85px,1.25fr) minmax(65px,.65fr) minmax(85px,1fr);gap:8px;align-items:center;margin:8px 0}.ingredient-row input{min-width:0}.baker-avatar{display:flex;align-items:center;gap:15px;padding:15px;border:1px solid var(--gold);background:linear-gradient(120deg,#26372d,#141c17);border-radius:8px}.avatar-icon{width:66px;height:66px;flex:0 0 auto;display:grid;place-items:center;font-size:38px;border-radius:50%;background:#3c4c3e;box-shadow:0 0 0 4px rgba(181,160,106,.13)}.diagnosis{border:1px solid var(--line);border-radius:6px;padding:16px;background:#121a16;margin-top:14px}.diagnosis.good{border-color:#6c9a79}.diagnosis.warn{border-color:#c4a35d}.clock-face{width:180px;height:180px;margin:16px auto;border-radius:50%;border:3px solid var(--gold);display:grid;place-items:center;background:radial-gradient(circle,#26352b,#121a16 70%);box-shadow:0 0 0 7px rgba(181,160,106,.08),0 0 28px rgba(181,160,106,.09)}.clock-time{font-size:29px;font-weight:700;color:var(--ivory);font-variant-numeric:tabular-nums}.stage-pills,.timer-buttons{display:flex;gap:7px;flex-wrap:wrap}.stage-pill{border:1px solid var(--line);padding:7px 9px;border-radius:20px;color:var(--muted);font-size:11px}.stage-pill.active{border-color:var(--gold);color:var(--gold);background:#2b342a}.timer-buttons button:disabled{opacity:.38;cursor:not-allowed}.pan-metric{font-size:23px;color:var(--gold);font-weight:700}.mini-help{font-size:11px;color:var(--muted)}.timer-buttons .btn{margin-top:8px}
 @media(max-width:950px){.pan-half{grid-column:span 12}}@media(max-width:460px){.ingredient-row{grid-template-columns:minmax(75px,1fr) 60px minmax(75px,1fr);gap:5px}.ingredient-row label{font-size:10px}.clock-face{width:158px;height:158px}}
 
+
+/* NEXORA mobile-first visual refresh · automatic system theme */
+:root{color-scheme:light;--bg:#F5F5F2;--panel:#FFFFFF;--line:#E2E2E8;--text:#24252B;--muted:#686A76;--gold:#7771C9;--ivory:#24252B;--sage:#A9A4E8;--deep:#EEEFF3;--accent-soft:#EFEEFC;--shadow:0 8px 26px rgba(35,36,48,.055)}
+body{background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+.layout{background:var(--bg)} aside{background:var(--panel);border-color:var(--line)}
+.brand{color:var(--text);letter-spacing:.13em}.brand-mark{color:#7771C9}.brand-mark svg{filter:none}.brand-mark svg path:nth-child(2){stroke:#A9A4E8}.brand-word small{color:var(--muted);letter-spacing:.12em}
+.eyebrow{color:var(--gold);letter-spacing:.14em}nav button{color:var(--muted);border-radius:12px;min-height:44px}nav button.active,nav button:hover{background:var(--accent-soft);border-color:transparent;color:var(--text)}
+.status{border-color:var(--line);border-radius:999px;color:var(--muted)}.status:before{background:#7771C9;border-radius:50%}
+.hero,.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,var(--panel),#F0EFFB);}.hero:after{ -webkit-text-stroke:1px rgba(119,113,201,.14)}.hero p{color:var(--muted)}.brand-tagline{color:#7771C9!important}.tag{border-color:#D5D2F4;color:#7771C9;border-radius:999px;background:rgba(239,238,252,.75)}
+.btn{background:#7771C9;border-color:#7771C9;color:white;border-radius:12px;min-height:44px;padding:11px 16px}.btn.alt{background:var(--panel);border-color:var(--line);color:var(--text)}.btn.alt:hover{border-color:#A9A4E8}
+input,select,textarea{background:var(--panel);border-color:#D7D8E0;color:var(--text);border-radius:11px;min-height:44px}input:focus,select:focus,textarea:focus{border-color:#8E88DA;box-shadow:0 0 0 3px rgba(169,164,232,.2)}label{color:var(--muted)}
+.item,.result,.diagnosis{background:#FAFAFD;border-color:var(--line);border-radius:13px}.empty{border-color:var(--line)}.rule,footer{border-color:var(--line)}.baker-avatar{background:linear-gradient(120deg,#F0EFFB,#FAFAFD);border-color:#D9D6F5;border-radius:14px}.avatar-icon{background:#E7E5FA;box-shadow:0 0 0 4px rgba(169,164,232,.2)}.clock-face{border-color:#8E88DA;background:radial-gradient(circle,#FFFFFF,#EFEEFC 72%);box-shadow:0 0 0 7px rgba(169,164,232,.15)}.clock-time{color:var(--text)}.stage-pill{border-radius:999px}.stage-pill.active{border-color:#A9A4E8;color:#625CB5;background:#EFEEFC}.pan-metric,.result strong{color:#7771C9}.diagnosis.good{border-color:#8CBDA0}.diagnosis.warn{border-color:#D8B66B}
+@media(prefers-color-scheme:dark){
+ :root{color-scheme:dark;--bg:#191A20;--panel:#24252D;--line:#3A3B46;--text:#F2F2F6;--muted:#B3B4C0;--gold:#B8B3F5;--ivory:#F2F2F6;--sage:#A9A4E8;--deep:#202129;--accent-soft:#343344;--shadow:0 8px 26px rgba(0,0,0,.18)}
+ body{background:radial-gradient(ellipse at 90% 0,rgba(169,164,232,.08),transparent 42%),var(--bg)}aside{background:#202129;border-color:var(--line)}.hero,.card{background:var(--panel);border-color:var(--line)}.hero{background:linear-gradient(135deg,#24252D,#2A2938)}.hero p{color:var(--muted)}.tag{background:#343344;border-color:#4B4868;color:#C7C4F5}.item,.result,.diagnosis{background:#1F2027;border-color:var(--line)}input,select,textarea{background:#1E1F26;border-color:#494A56;color:var(--text)}.btn.alt{background:transparent;color:var(--text);border-color:var(--line)}.baker-avatar{background:linear-gradient(120deg,#302F42,#22232B);border-color:#4A4768}.avatar-icon{background:#39364F}.clock-face{background:radial-gradient(circle,#30313B,#24242F 70%)}.clock-time{color:var(--text)}.stage-pill.active{background:#39364F;color:#D2CFFD}.hero:after{-webkit-text-stroke:1px rgba(169,164,232,.16)}
+}
+@media(max-width:700px){
+ html{scroll-padding-top:12px}body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}.layout{display:block;min-height:100dvh}aside{position:relative;padding:12px 16px 10px;border-right:0;border-bottom:1px solid var(--line);background:var(--panel)}aside>hr,aside>.eyebrow,aside>.note-side{display:none}.brand{font-size:19px;gap:10px}.brand-mark{width:38px;height:38px}.brand-word small{font-size:8px}nav{position:fixed;z-index:50;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px;margin:0;padding:7px 5px calc(7px + env(safe-area-inset-bottom));background:rgba(250,250,252,.94);border-top:1px solid var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}nav button{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px;text-align:center;white-space:normal;padding:7px 1px;min-width:0;min-height:49px;font-size:9px;line-height:1.1;border-radius:10px}nav button.active,nav button:hover{background:var(--accent-soft);border-color:transparent}main{padding:20px 13px 28px}header{align-items:flex-start;gap:8px;margin-bottom:18px}header>div:first-child{min-width:0}h1{font-size:25px}header .muted{font-size:12px}.status{font-size:8px;padding:7px 9px;letter-spacing:.05em}.hero,.card{padding:17px;border-radius:16px}.hero{margin-bottom:12px}.hero h2{font-size:29px;margin:16px 0}.hero:after{right:-5%;top:-28px;font-size:190px}.grid,.pan-grid{gap:12px}.c4,.c6,.pan-half,.pan-full{grid-column:span 12}.row{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.field{margin:10px 0}.ingredient-row{grid-template-columns:minmax(78px,1fr) 74px minmax(74px,1fr);gap:6px}.ingredient-row label{font-size:11px}.ingredient-row input{padding:10px 7px}.timer-buttons{display:grid;grid-template-columns:1fr 1fr}.timer-buttons .btn{margin-top:5px;padding:10px 8px;font-size:11px}.clock-face{width:160px;height:160px}.clock-time{font-size:28px}.stage-pills{justify-content:center}.status{white-space:normal}.section-intro{margin-bottom:12px}textarea{min-height:90px}footer{margin-top:20px}
+}
+@media(prefers-color-scheme:dark) and (max-width:700px){nav{background:rgba(32,33,41,.94)}}
+@media(max-width:360px){nav button{font-size:8px}.brand{font-size:17px}.brand-word small{font-size:7px}.row{grid-template-columns:1fr}.ingredient-row{grid-template-columns:minmax(70px,1fr) 62px minmax(68px,1fr)}}
+
 </style>
 </head>
 <body>
@@ -29,12 +51,12 @@ aside{padding:28px 18px;background:rgba(18,26,22,.96);border-right:1px solid var
   <hr>
   <div class="eyebrow">Espacio de trabajo</div>
   <nav aria-label="Navegación principal">
-    <button class="active" data-page="inicio">⌂ &nbsp; Inicio</button>
-    <button data-page="herramientas">⌁ &nbsp; Herramientas</button>
-    <button data-page="panaderia">🥖 &nbsp; Panadería</button>
-    <button data-page="barismo">☕ &nbsp; Barismo</button>
-    <button data-page="bitacora">▤ &nbsp; Bitácora</button>
-    <button data-page="acerca">✳ &nbsp; Proyecto</button>
+    <button class="active" data-page="inicio" aria-label="Inicio">⌂<span>Inicio</span></button>
+    <button data-page="herramientas" aria-label="Herramientas">⌁<span>Herramientas</span></button>
+    <button data-page="panaderia" aria-label="Panadería">🥖<span>Panadería</span></button>
+    <button data-page="barismo" aria-label="Barismo">☕<span>Barismo</span></button>
+    <button data-page="bitacora" aria-label="Bitácora">▤<span>Bitácora</span></button>
+    <button data-page="acerca" aria-label="Proyecto">✳<span>Proyecto</span></button>
   </nav>
   <div class="note-side">CIENCIA · PRECISIÓN<br>DOMINIO GASTRONÓMICO</div>
 </aside>
@@ -143,5 +165,9 @@ function renderBrewHistory(){const a=getBrewHistory();$('brewHistory').innerHTML
 function exportBrewHistory(){downloadJSON(getBrewHistory(),'nexora-calibraciones-espresso.json')}
 calcBread();renderBreadSaved();updateRatio();renderBrewHistory();
 
+</script>
+<script>
+// Sincroniza el color de la barra del navegador con el tema del sistema.
+(function(){const meta=document.getElementById('themeColorMeta');const media=window.matchMedia('(prefers-color-scheme: dark)');function update(){if(meta)meta.setAttribute('content',media.matches?'#191A20':'#F5F5F2')}update();if(media.addEventListener)media.addEventListener('change',update);else if(media.addListener)media.addListener(update)})();
 </script>
 </body></html>
