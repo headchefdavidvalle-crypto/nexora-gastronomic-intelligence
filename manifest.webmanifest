@@ -11,7 +11,11 @@
   "orientation": "any",
   "background_color": "#18221d",
   "theme_color": "#202820",
-  "categories": ["education", "food", "productivity"],
+  "categories": [
+    "education",
+    "food",
+    "productivity"
+  ],
   "icons": [
     {
       "src": "./nexora-icon-192.png",
