@@ -1,33 +1,27 @@
-
 {
   "id": "./",
-  "name": "NEXORA — Inteligencia Gastronómica",
+  "name": "NEXORA — Gastronomic Intelligence",
   "short_name": "NEXORA",
-  "description": "Laboratorio gastronómico de barismo, tueste, pizza, panadería y gestión.",
+  "description": "Laboratorio gastronómico: barismo, panadería, pizza y costos. Ciencia, precisión y dominio gastronómico.",
   "lang": "es",
-  "start_url": "./index.html",
+  "dir": "ltr",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
   "orientation": "any",
-  "background_color": "#18221d",
-  "theme_color": "#202820",
-  "categories": [
-    "education",
-    "food",
-    "productivity"
-  ],
+  "background_color": "#0E1511",
+  "theme_color": "#0E1511",
+  "categories": ["food", "education", "productivity"],
   "icons": [
-    {
-      "src": "./nexora-icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "./nexora-icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
+    { "src": "nexora-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "nexora-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "nexora-icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "nexora-icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Barismo", "short_name": "Barismo", "url": "./#barismo", "icons": [{ "src": "nexora-icon-192.png", "sizes": "192x192" }] },
+    { "name": "Panadería", "short_name": "Panadería", "url": "./#panaderia", "icons": [{ "src": "nexora-icon-192.png", "sizes": "192x192" }] },
+    { "name": "Costos", "short_name": "Costos", "url": "./#costos", "icons": [{ "src": "nexora-icon-192.png", "sizes": "192x192" }] }
   ]
 }
