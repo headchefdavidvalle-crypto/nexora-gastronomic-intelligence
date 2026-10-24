@@ -590,9 +590,6 @@ main,.workspace,.content,.page-content{background:transparent!important}
 @media(max-width:640px){.nx-editorial-video-strip{grid-template-columns:1fr;gap:10px;margin:14px 0 18px}.nx-video-card{height:168px;min-height:168px;border-radius:12px}.nx-video-overlay{left:14px;right:14px;bottom:17px}.nx-video-overlay small{max-width:290px;font-size:11px}}
 @media(prefers-reduced-motion:reduce){.nx-module-video{opacity:.48}}
 </style>
-<script id="nx-video-autoplay-guard">
-(()=>{const boot=()=>{const videos=[...document.querySelectorAll('.nx-module-video,.nx-module-ambient video')];const attempt=v=>{v.muted=true;v.defaultMuted=true;v.autoplay=true;v.loop=true;v.playsInline=true;v.setAttribute('muted','');v.setAttribute('autoplay','');v.setAttribute('playsinline','');try{const p=v.play();if(p&&p.catch)p.catch(()=>{v.dataset.autoplayBlocked='true';});}catch(e){v.dataset.autoplayBlocked='true';}};videos.forEach(v=>{v.addEventListener('loadedmetadata',()=>attempt(v));v.addEventListener('canplay',()=>attempt(v));v.addEventListener('error',()=>{v.dataset.videoError='true';});attempt(v);});const retry=()=>videos.forEach(v=>{if(v.paused||v.dataset.autoplayBlocked==='true')attempt(v);});document.addEventListener('visibilitychange',()=>{if(!document.hidden)retry();});['pointerdown','touchstart','keydown'].forEach(evt=>document.addEventListener(evt,retry,{once:true,passive:true}));if('IntersectionObserver'in window){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)attempt(e.target);}),{threshold:.05});videos.forEach(v=>io.observe(v));}};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();})();
-</script>
 
 
 <style id="nx-all-module-video-style">
@@ -603,6 +600,37 @@ main,.workspace,.content,.page-content{background:transparent!important}
 @media(max-width:640px){.nx-module-ambient{height:128px;border-radius:11px;margin-bottom:15px}.nx-module-ambient .nx-video-overlay{left:13px;right:13px;bottom:13px}.nx-module-ambient .nx-video-overlay small{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.nx-module-ambient video{opacity:.35}}
 </style>
+
+
+<style id="nx-roast-lab-accessibility">
+.nx-roast-lab{color:#f4f0e6!important;background:#18221d!important}
+.nx-roast-lab h4,.nx-roast-lab h5,.nx-roast-lab p,.nx-roast-lab label,.nx-roast-lab li{color:#f4f0e6!important}
+.nx-roast-data-panel{margin:16px 0;padding:16px;border:1px solid #b99b5b;border-radius:14px;background:#202c25;color:#f4f0e6}
+.nx-roast-data-panel h5{font-size:1.1rem;margin:0 0 6px;color:#f3d48b!important}
+.nx-roast-table-wrap{overflow-x:auto}
+.nx-roast-data-table{width:100%;border-collapse:collapse;min-width:310px}
+.nx-roast-data-table th,.nx-roast-data-table td{padding:8px;border-bottom:1px solid #526055;text-align:left;color:#f4f0e6}
+.nx-roast-data-table th{background:#34453a;color:#f3d48b}
+.nx-roast-data-table input{width:100%;min-width:70px;box-sizing:border-box;background:#101813;color:#fff;border:1px solid #9b9f8e;border-radius:7px;padding:9px;font-size:16px}
+.nx-roast-data-table button,.nx-roast-data-actions button{background:#d6b66f;color:#18221d;border:0;border-radius:8px;padding:9px 12px;font-weight:700;cursor:pointer}
+.nx-roast-data-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.nx-roast-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-top:14px}
+.nx-roast-metrics div{background:#101813;border:1px solid #526055;border-radius:9px;padding:10px}
+.nx-roast-metrics span{display:block;font-size:.8rem;color:#d4d9cf;margin-bottom:5px}
+.nx-roast-metrics b{font-size:1rem;color:#f3d48b}
+.nx-roast-data-message{padding:10px;border-left:3px solid #d6b66f;background:#303d33;border-radius:4px}
+.nx-roast-chart-wrap svg{background:#18221d;border-radius:10px}
+@media(max-width:600px){.nx-roast-data-panel{padding:10px}.nx-roast-data-table th,.nx-roast-data-table td{padding:5px}.nx-roast-data-actions button{flex:1}}
+</style>
+
+
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#202820">
+<meta name="application-name" content="NEXORA">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="NEXORA">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 </head>
 <body>
@@ -702,7 +730,7 @@ main,.workspace,.content,.page-content{background:transparent!important}
    <a class="nx-video-source" href="https://pixabay.com/videos/plantation-cultivation-farm-coffee-198288/" target="_blank" rel="noopener noreferrer">Video: Pixabay</a>
   </article>
   <article class="nx-video-card nx-video-roast">
-   <video class="nx-module-video" autoplay muted loop playsinline preload="auto" poster="https://images.pexels.com/photos/3058993/pexels-photo-3058993.jpeg?auto=compress&cs=tinysrgb&w=900" aria-label="Tostado de café" data-video-ready="true"><source src="https://videos.pexels.com/video-files/4815783/4815783-hd_1920_1080_30fps.mp4" type="video/mp4"></video>
+   <video class="nx-module-video" autoplay muted loop playsinline preload="auto" poster="https://images.pexels.com/photos/3058993/pexels-photo-3058993.jpeg?auto=compress&cs=tinysrgb&w=900" aria-label="Tostado de café" data-video-ready="true"><source src="https://videos.pexels.com/video-files/4815784/4815784-hd_1920_1080_30fps.mp4" type="video/mp4"></video>
    <div class="nx-video-overlay"><span>PROCESO · TOSTIÓN</span><b>Desarrollo del grano</b><small>La tostión modifica aromas, solubilidad y comportamiento en extracción.</small></div>
    <a class="nx-video-source" href="https://www.pexels.com/video/roasting-coffee-bean-4815783/" target="_blank" rel="noopener noreferrer">Video: Pexels</a>
   </article>
@@ -972,9 +1000,52 @@ guatemala:`<div class="coffee-hero"><div class="coffee-glyph">⛰️</div><div><
 green:`<div class="coffee-hero"><div class="coffee-glyph">🫘</div><div><div class="coffee-kicker">03 · Evaluación física</div><h3>Café verde: pergamino, oro, humedad, rendimiento y defectos</h3><p>Un lote se evalúa por identidad y trazabilidad, humedad, actividad de agua cuando esté disponible, tamaño, densidad, defectos y taza. El color bonito no demuestra calidad sensorial.</p></div></div>
 <div class="coffee-grid"><article class="coffee-card"><h4>Las formas del grano</h4><div class="coffee-steps"><div class="coffee-step">🍒<b>Cereza</b><span>Fruto maduro cosechado.</span></div><div class="coffee-step">🧺<b>Pergamino</b><span>Grano seco con endocarpio protector.</span></div><div class="coffee-step">🫘<b>Oro / verde</b><span>Tras trillado, se retira pergamino.</span></div><div class="coffee-step">🔥<b>Tostado</b><span>Cambia color, estructura y masa.</span></div></div><p>“Oro” suele referirse al café verde listo para clasificación y exportación. En procesos naturales, el secado ocurre con el fruto y la trilla retira las capas secas; la ruta exacta depende del proceso.</p></article><article class="coffee-card"><h4>Rendimiento de trilla</h4><p>Fórmula operativa: <b>rendimiento (%) = kg de café oro obtenidos ÷ kg de pergamino alimentado × 100</b>. Registra humedad de entrada/salida y merma; comparar lotes con humedades distintas puede inducir conclusiones erróneas.</p><div class="coffee-callout">Ejemplo: 100 kg de pergamino producen 80 kg de oro → rendimiento de trilla 80 %. No significa que el lote tenga 80 % de calidad ni que sea equivalente entre beneficios.</div></article><article class="coffee-card"><h4>Humedad y actividad de agua</h4><p>Para café verde de especialidad se usa a menudo como objetivo comercial una humedad aproximada de 10–12 % (base húmeda), con variación según mercado, método y almacenamiento. Medir con equipo calibrado y tomar muestra representativa. La actividad de agua (aw) es una medición diferente y ayuda a estimar disponibilidad de agua y riesgo de deterioro.</p><p>No seques hasta un número a costa de agrietar o dañar el grano; ni almacenes húmedo en bolsas impermeables.</p></article><article class="coffee-card"><h4>Tamaño, densidad y color</h4><ul><li><b>Zarandas:</b> miden tamaño; una zaranda 18 retiene granos de diámetro nominal cercano a 18/64 de pulgada. El tamaño no garantiza sabor.</li><li><b>Densidad:</b> orienta sobre estructura y comportamiento térmico; compara dentro del lote con método consistente.</li><li><b>Color:</b> observa uniformidad, tonos anómalos, manchas, blanqueamiento o decoloración.</li><li><b>Olor:</b> humedad, moho, fermento agresivo, fenol o químicos son señales de investigación y posible rechazo.</li></ul></article><article class="coffee-card wide"><h4>Defectos físicos frecuentes y posibles efectos</h4><div class="coffee-table-wrap"><table class="coffee-table"><thead><tr><th>Defecto</th><th>Cómo reconocerlo</th><th>Riesgo sensorial / técnico</th></tr></thead><tbody><tr><td>Negro total o parcial</td><td>Grano oscuro, a veces opaco y endurecido</td><td>Puede aportar notas fermentadas, terrosas, fenólicas o amargas; depende de causa y severidad.</td></tr><tr><td>Ácido / agrio</td><td>Grano con aspecto anómalo, a veces amarillento o irregular</td><td>Puede asociarse a fermentación indeseada y notas avinagradas, agrias o desagradables.</td></tr><tr><td>Mohoso / dañado por humedad</td><td>Manchas, olor a bodega/moho, posible crecimiento visible</td><td>Riesgo de defecto grave y de inocuidad; no se corrige con tueste.</td></tr><tr><td>Inmaduro / quaker potencial</td><td>Grano verde pálido o poco desarrollado; el quaker se detecta con más seguridad tras tostar por su color muy claro</td><td>Notas a cereal crudo, cacahuate, papel, astringencia o baja dulzura.</td></tr><tr><td>Broca / insecto</td><td>Perforaciones o galerías</td><td>Daño físico, mayor riesgo de fragmentación y defectos asociados.</td></tr><tr><td>Partido / mordido / aplastado</td><td>Fragmentos o roturas visibles</td><td>Tueste desigual: fragmentos se calientan más rápido y pueden oscurecerse.</td></tr><tr><td>Con pergamino / cáscara / piedra</td><td>Material ajeno mezclado con el café</td><td>Riesgo de contaminación del equipo y defectos de taza; requiere selección.</td></tr><tr><td>Fermento excesivo / fenólico</td><td>El olor puede ser más evidente en catación que por inspección visual</td><td>Vinagre, alcohol solvente, medicinal, humo o especia fenólica; confirmar por cata y trazabilidad.</td></tr></tbody></table></div><p class="coffee-note">La apariencia por sí sola no permite diagnosticar la causa exacta. Clasifica según el protocolo que aplique al contrato/laboratorio; el sistema de defectos SCA/CVA actual debe distinguirse de esquemas comerciales históricos.</p></article></div>`,
 roast:`<div class="coffee-hero"><div class="coffee-glyph">🔥</div><div><div class="coffee-kicker">04 · Tostaduría</div><h3>Curva de tueste: energía, aire, cracks y desarrollo</h3><p>El tostador controla transferencia de calor por conducción, convección y radiación. La temperatura de sonda no es la temperatura uniforme de todos los granos; registra el mismo equipo y lote para comparar perfiles.</p></div></div>
-<div class="coffee-card wide"><h4>Diagrama conceptual de una curva principiante</h4><svg class="coffee-svg" viewBox="0 0 720 250" role="img" aria-label="Diagrama conceptual de temperatura de grano y fases de tueste"><rect x="48" y="18" width="640" height="185" rx="8" fill="rgba(130,149,116,.08)" stroke="currentColor" stroke-opacity=".18"/><path d="M48 203H688 M48 157H688 M48 111H688 M48 65H688" stroke="currentColor" stroke-opacity=".13"/><path d="M60 190 C115 174 160 143 220 117 S330 80 390 62 S490 42 540 31 S630 24 675 20" fill="none" stroke="#758e68" stroke-width="4" stroke-linecap="round"/><path d="M60 190 C115 174 160 143 220 117 S330 80 390 62 S490 42 540 31 S630 24 675 20 L675 203 L60 203Z" fill="#8ca17e" fill-opacity=".13"/><line x1="220" y1="20" x2="220" y2="203" stroke="#b29b6a" stroke-dasharray="5 5"/><line x1="390" y1="20" x2="390" y2="203" stroke="#b29b6a" stroke-dasharray="5 5"/><line x1="540" y1="20" x2="540" y2="203" stroke="#b29b6a" stroke-dasharray="5 5"/><g fill="currentColor" font-size="12"><text x="64" y="38">Carga</text><text x="160" y="38">Secado</text><text x="275" y="38">Maillard</text><text x="410" y="38">1.er crack</text><text x="565" y="38">Desarrollo</text><text x="48" y="226">Inicio</text><text x="205" y="226">Amarillo</text><text x="365" y="226">Crack</text><text x="520" y="226">Descarga</text><text x="625" y="246">Tiempo →</text></g></svg><p class="coffee-note">Esquema ilustrativo, no una receta de temperatura real. La curva debe salir de datos medidos en tu tostadora: temperatura de grano, temperatura ambiental, tiempo, tasa de cambio (RoR), energía y flujo de aire.</p></div>
+<div class="coffee-card wide nx-roast-lab"><h4>Curva de tueste interactiva · laboratorio didáctico</h4>
+<p>Lee la curva de izquierda a derecha: muestra cómo aumenta la temperatura registrada de grano con el tiempo. Es una simulación explicativa, no datos reales de una tostadora.</p>
+<div class="nx-roast-controls"><label>Selecciona una fase <select id="nxRoastPhase"><option value="dry">1. Secado</option><option value="maillard">2. Maillard</option><option value="development">3. Desarrollo</option></select></label><label>Tiempo total de ejemplo <select id="nxRoastTime"><option value="8">8 min · rápido</option><option value="10" selected>10 min · ejemplo</option><option value="12">12 min · más largo</option></select></label></div>
+
+<div class="nx-roast-data-panel" aria-label="Datos editables del perfil">
+  <h5>Prueba tus propios datos</h5>
+  <p>Introduce puntos de tiempo y temperatura de grano (BT). Agrega o elimina filas; la curva y las métricas se recalculan con tus valores.</p>
+  <div class="nx-roast-table-wrap"><table class="nx-roast-data-table"><thead><tr><th>Tiempo (min)</th><th>BT (°C)</th><th>Acción</th></tr></thead><tbody id="nxRoastDataRows">
+    <tr><td><input type="number" min="0" step="0.1" value="0" aria-label="Tiempo punto 1"></td><td><input type="number" min="0" max="300" step="1" value="25" aria-label="Temperatura punto 1"></td><td><button type="button" class="nx-roast-remove">Quitar</button></td></tr>
+    <tr><td><input type="number" min="0" step="0.1" value="2" aria-label="Tiempo punto 2"></td><td><input type="number" min="0" max="300" step="1" value="105" aria-label="Temperatura punto 2"></td><td><button type="button" class="nx-roast-remove">Quitar</button></td></tr>
+    <tr><td><input type="number" min="0" step="0.1" value="4" aria-label="Tiempo punto 3"></td><td><input type="number" min="0" max="300" step="1" value="150" aria-label="Temperatura punto 3"></td><td><button type="button" class="nx-roast-remove">Quitar</button></td></tr>
+    <tr><td><input type="number" min="0" step="0.1" value="6" aria-label="Tiempo punto 4"></td><td><input type="number" min="0" max="300" step="1" value="185" aria-label="Temperatura punto 4"></td><td><button type="button" class="nx-roast-remove">Quitar</button></td></tr>
+    <tr><td><input type="number" min="0" step="0.1" value="8" aria-label="Tiempo punto 5"></td><td><input type="number" min="0" max="300" step="1" value="202" aria-label="Temperatura punto 5"></td><td><button type="button" class="nx-roast-remove">Quitar</button></td></tr>
+    <tr><td><input type="number" min="0" step="0.1" value="10" aria-label="Tiempo punto 6"></td><td><input type="number" min="0" max="300" step="1" value="210" aria-label="Temperatura punto 6"></td><td><button type="button" class="nx-roast-remove">Quitar</button></td></tr>
+  </tbody></table></div>
+  <div class="nx-roast-data-actions"><button type="button" id="nxRoastAddRow">+ Añadir punto</button><button type="button" id="nxRoastResetData">Restablecer ejemplo</button><button type="button" id="nxRoastExportData">Exportar CSV</button></div>
+  <div class="nx-roast-metrics" aria-live="polite"><div><span>Puntos válidos</span><b id="nxRoastMetricPoints">6</b></div><div><span>Temperatura final</span><b id="nxRoastMetricFinal">210 °C</b></div><div><span>Duración registrada</span><b id="nxRoastMetricDuration">10 min</b></div><div><span>RoR medio entre puntos</span><b id="nxRoastMetricRor">—</b></div></div>
+  <p id="nxRoastDataMessage" class="nx-roast-data-message" role="status">Ejemplo didáctico. Introduce datos reales de tu tostadora para analizar tu perfil.</p>
+</div>
+<div class="nx-roast-chart-wrap"><svg id="nxRoastChart" class="coffee-svg" viewBox="0 0 760 330" role="img" aria-label="Curva de temperatura de grano por tiempo con fases y puntos de referencia"><rect x="62" y="28" width="660" height="240" rx="8" fill="rgba(130,149,116,.07)" stroke="#c8c1b2" stroke-opacity=".75"/><rect x="62" y="28" width="220" height="240" fill="#b9c9a4" fill-opacity=".18"/><rect id="nxRoastPhaseBand" x="282" y="28" width="260" height="240" fill="#c4a66a" fill-opacity=".18"/><rect x="542" y="28" width="180" height="240" fill="#c78d67" fill-opacity=".15"/>
+<g stroke="#bcb5a7" stroke-opacity=".35"><path d="M62 268H722 M62 208H722 M62 148H722 M62 88H722 M62 28H722"/><path d="M62 28V268 M172 28V268 M282 28V268 M412 28V268 M542 28V268 M652 28V268 M722 28V268"/></g>
+<g fill="#f4f0e6" font-size="13"><text x="10" y="32">220°C</text><text x="10" y="92">180°C</text><text x="10" y="152">140°C</text><text x="10" y="212">100°C</text><text x="30" y="272">60°C</text><text x="58" y="294">0</text><text id="nxRoastAxisEnd" x="680" y="294">10 min</text><text x="10" y="15">Temperatura (°C)</text><text x="300" y="318">Tiempo desde la carga →</text></g>
+<path id="nxRoastCurve" d="M62 252 C120 230 190 185 282 135 S430 80 542 55 S650 38 722 32" fill="none" stroke="#758e68" stroke-width="4" stroke-linecap="round"/><circle id="nxRoastPoint" cx="282" cy="135" r="7" fill="#b29b6a" stroke="#f4f0e6" stroke-width="1.5"/><g fill="#f4f0e6" font-size="13" font-weight="700"><text x="120" y="50">SECADO</text><text x="345" y="50">MAILLARD</text><text x="570" y="50">DESARROLLO</text></g><line x1="542" y1="28" x2="542" y2="268" stroke="#b29b6a" stroke-dasharray="5 5"/><text x="550" y="82" fill="#f4f0e6" font-size="13">1.er crack*</text></svg></div>
+<div id="nxRoastExplanation" class="coffee-callout" aria-live="polite"><b>Secado · qué ocurre:</b> el grano pierde humedad y cambia de verde a amarillo. Observa el color y el olor; una fase demasiado larga puede apagar el perfil, mientras una energía excesiva puede causar calentamiento desigual.</div>
+<div class="nx-roast-legend"><span><i style="background:#b9c9a4"></i> Secado</span><span><i style="background:#c4a66a"></i> Maillard</span><span><i style="background:#c78d67"></i> Desarrollo</span></div>
+<p class="coffee-note">*La posición del primer crack es orientativa. Los minutos, temperaturas y proporciones varían por lote, carga, máquina y método de medición. Para analizar un tueste real registra BT (temperatura de grano), ET (ambiente), RoR (tasa de cambio), energía, aire, amarillo, primer crack y descarga.</p></div>
+<style>.nx-roast-controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:12px 0}.nx-roast-controls label{display:grid;gap:6px;font-weight:600}.nx-roast-controls select{background:var(--card-bg,rgba(130,149,116,.1));color:inherit;border:1px solid rgba(178,155,106,.6);border-radius:8px;padding:10px;min-width:0}.nx-roast-chart-wrap{width:100%;overflow-x:auto}.nx-roast-chart-wrap svg{display:block;width:100%;min-width:330px;height:auto}.nx-roast-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.9em;margin:8px 0}.nx-roast-legend span{display:flex;align-items:center;gap:6px}.nx-roast-legend i{width:12px;height:12px;border-radius:3px;display:inline-block}</style>
+
 <div class="coffee-grid" style="margin-top:12px"><article class="coffee-card"><h4>Fase inicial / secado</h4><p>Desde carga hasta que el grano pierde la mayor parte del agua libre y pasa de verde a amarillo. Evita un arranque tan agresivo que queme superficie o genere puntas; tampoco prolongues tanto que la taza quede apagada. No existe un % de fase universal.</p><p><b>Observa:</b> color, olor a hierba/cereal, estabilidad del tambor y recuperación tras la carga.</p></article><article class="coffee-card"><h4>Fase media / Maillard</h4><p>El grano amarillea, se torna canela y desarrolla precursores de aroma, color y sabor. Ajusta energía y aire gradualmente. Un RoR que cae demasiado pronto puede producir perfil plano; un aumento descontrolado puede provocar quemado o desarrollo desigual.</p><p><b>Observa:</b> transición de olor a pan/cereal, color y tasa de cambio de temperatura.</p></article><article class="coffee-card"><h4>Fase final / desarrollo</h4><p>Primer crack: sonidos por fractura interna conforme vapor y gases generan presión. El desarrollo después del inicio del crack influye en solubilidad, acidez percibida, dulzor y notas tostadas. Más desarrollo no siempre es mejor.</p><p><b>Observa:</b> intensidad y uniformidad del crack, humo, color y RoR; descarga según el perfil sensorial buscado.</p></article><article class="coffee-card"><h4>Flujo de aire y energía</h4><p>El aire evacua humo, vapor y cascarilla y cambia la transferencia convectiva. Un flujo bajo puede retener humo; demasiado flujo, según máquina, puede enfriar o alterar la transferencia de calor. La relación con la potencia depende del diseño: calibra cambios pequeños y aislados.</p><p><b>Principio:</b> no copies porcentajes de ventilador de otra tostadora sin conocer su escala, presión y diseño.</p></article><article class="coffee-card"><h4>Cracks: qué significan</h4><ul><li><b>Primer crack:</b> una serie de chasquidos; suele marcar el inicio de la fase de desarrollo. Intensidad varía por origen, humedad, densidad y máquina.</li><li><b>Segundo crack:</b> chasquidos más finos; estructura más frágil y aceites pueden acercarse a superficie. No es necesario llegar a él para café de especialidad.</li><li><b>Crack silencioso o débil:</b> puede depender de carga, ruido ambiental, humedad o diseño. No diagnostiques solo por sonido.</li></ul></article><article class="coffee-card"><h4>Enfriamiento y reposo</h4><p>Enfría rápido y de forma uniforme al terminar el tueste para frenar reacciones residuales; retira cascarilla con extracción adecuada. Deja reposar en envase apropiado con protección de oxígeno, luz, humedad y calor.</p><p><b>Desgasificación:</b> CO₂ sale del grano durante días y después. Espresso suele requerir más reposo que filtro en muchos cafés; prueba día 1, 3, 7 y 14. No hay un número fijo para todos los tuestes.</p></article></div>
-<div class="coffee-card wide" style="margin-top:12px"><h4>Protocolo de ensayo para principiantes</h4><div class="coffee-steps"><div class="coffee-step">1<b>Antes</b><span>Identifica lote, densidad si puedes, humedad y masa de carga.</span></div><div class="coffee-step">2<b>Durante</b><span>Registra tiempo, BT/ET, energía, aire, amarillo y cracks.</span></div><div class="coffee-step">3<b>Descarga</b><span>Enfría rápido, pesa, calcula merma y toma notas.</span></div><div class="coffee-step">4<b>Evalúa</b><span>Cata a reposos definidos y cambia una variable cada vez.</span></div></div><p><b>Humedad previa:</b> café verde de alrededor de 10–12 % es común en especificaciones comerciales, pero verifica medición y almacenamiento. Si el lote está fuera del rango esperado, no intentes “arreglarlo” solo con una curva de tueste: consulta proveedor y actividad de agua.</p><p><b>Rendimiento de tueste:</b> (masa tostada ÷ masa verde cargada) × 100. Ejemplo: 1,000 g verde → 850 g tostado = 85 % de rendimiento y 15 % de pérdida de masa. Esa merma combina agua, cascarilla y compuestos volátiles; no mide por sí sola el nivel de calidad.</p><p class="coffee-note">Seguridad: las tostadoras generan superficies calientes, humo y gases. Usa ventilación adecuada, mantenimiento, control de incendios y procedimientos del fabricante; nunca dejes la máquina sin supervisión.</p></div>`,
+<div class="coffee-card wide" style="margin-top:12px"><h4>Protocolo de ensayo para principiantes</h4><div class="coffee-steps"><div class="coffee-step">1<b>Antes</b><span>Identifica lote, densidad si puedes, humedad y masa de carga.</span></div><div class="coffee-step">2<b>Durante</b><span>Registra tiempo, BT/ET, energía, aire, amarillo y cracks.</span></div><div class="coffee-step">3<b>Descarga</b><span>Enfría rápido, pesa, calcula merma y toma notas.</span></div><div class="coffee-step">4<b>Evalúa</b><span>Cata a reposos definidos y cambia una variable cada vez.</span></div></div><p><b>Humedad previa:</b> café verde de alrededor de 10–12 % es común en especificaciones comerciales, pero verifica medición y almacenamiento. Si el lote está fuera del rango esperado, no intentes “arreglarlo” solo con una curva de tueste: consulta proveedor y actividad de agua.</p><p><b>Rendimiento de tueste:</b> (masa tostada ÷ masa verde cargada) × 100. Ejemplo: 1,000 g verde → 850 g tostado = 85 % de rendimiento y 15 % de pérdida de masa. Esa merma combina agua, cascarilla y compuestos volátiles; no mide por sí sola el nivel de calidad.</p><p class="coffee-note">Seguridad: las tostadoras generan superficies calientes, humo y gases. Usa ventilación adecuada, mantenimiento, control de incendios y procedimientos del fabricante; nunca dejes la máquina sin supervisión.</p></div>
+<div class="coffee-card wide nx-roast-explore" style="margin-top:14px">
+<h4>Explora y aprende más · ruta de estudio del tostador</h4>
+<p>Usa estas herramientas para conectar el perfil térmico con el resultado en taza. Los enlaces abren recursos externos; la curva de NEXORA sigue siendo una simulación si no introduces mediciones reales.</p>
+<div class="coffee-grid">
+ <article class="coffee-card"><h4>1 · Bitácora de tuestes</h4><p>Registra origen, variedad, proceso, densidad/humedad si las tienes, masa de carga, tiempos de amarillo, primer crack, descarga, merma y observaciones de taza.</p><p><b>Ejercicio:</b> compara dos tuestes cambiando solo una variable y registra qué cambió en catación.</p></article>
+ <article class="coffee-card"><h4>2 · RoR (tasa de cambio)</h4><p>RoR expresa cuánto cambia la temperatura por minuto. Esta versión calcula un promedio entre puntos registrados; no sustituye una curva RoR instantánea con muestreo frecuente.</p><p><b>Ejercicio:</b> registra BT cada 30 segundos y observa si el RoR cae, se estabiliza o aumenta.</p></article>
+ <article class="coffee-card"><h4>3 · Desarrollo y primer crack</h4><p>Anota el momento real del primer crack y la descarga. Calcula desarrollo como descarga menos inicio de primer crack, y desarrollo % como ese tiempo dividido por el tiempo total. Interpreta junto con sabor, no como objetivo universal.</p><p><b>Ejercicio:</b> compara tres perfiles con diferente desarrollo y cata a igual reposo.</p></article>
+ <article class="coffee-card"><h4>4 · Merma de masa</h4><p>Fórmula: (masa verde − masa tostada) ÷ masa verde × 100. Es una medida útil para comparar procesos, pero no es un indicador autónomo de calidad.</p><p><b>Ejercicio:</b> pesa antes y después, y compara la merma con color, solubilidad y notas sensoriales.</p></article>
+ <article class="coffee-card"><h4>5 · Catación comparativa</h4><p>Evalúa fragancia/aroma, sabor, posgusto, acidez, dulzor, balance, cuerpo y uniformidad con un protocolo consistente. Registra defectos y notas descriptivas, evitando asumir que un solo perfil es universalmente superior.</p><p><b>Ejercicio:</b> cata a ciegas tres tuestes del mismo lote.</p></article>
+ <article class="coffee-card"><h4>6 · Recursos externos</h4><p><a href="https://sca.coffee/" target="_blank" rel="noopener noreferrer">Specialty Coffee Association (SCA)</a> · estándares y educación.</p><p><a href="https://coffeecollective.dk/" target="_blank" rel="noopener noreferrer">Coffee Collective</a> · información de origen y práctica de café.</p><p><a href="https://www.cropster.com/" target="_blank" rel="noopener noreferrer">Cropster</a> · herramientas y conceptos de registro de perfiles de tueste.</p></article>
+</div>
+<p class="coffee-note">La temperatura de sonda depende del diseño y la calibración de la tostadora. No uses temperaturas de este ejemplo como instrucciones de operación; sigue el fabricante, la seguridad de tu equipo y valida cada cambio mediante medición y catación.</p>
+</div>`,
+
+
+
 process:`<div class="coffee-hero"><div class="coffee-glyph">🍒</div><div><div class="coffee-kicker">05 · Poscosecha</div><h3>Procesos del café: qué se retiene, qué se elimina y qué se transforma</h3><p>El proceso no “crea” notas por decreto. Cambia la exposición del grano a mucílago, microorganismos, oxígeno, tiempo, temperatura y secado; el resultado depende del control y de la materia prima.</p></div></div>
 <div class="coffee-grid"><article class="coffee-card"><h4>Lavado / fully washed</h4><div class="coffee-steps"><div class="coffee-step">🍒<b>Cosecha</b><span>Seleccionar cereza madura.</span></div><div class="coffee-step">◌<b>Despulpado</b><span>Retirar piel y pulpa.</span></div><div class="coffee-step">💧<b>Fermentación y lavado</b><span>Remover mucílago según sistema.</span></div><div class="coffee-step">☀<b>Secado</b><span>Llevar a humedad estable.</span></div></div><p>Perfil posible: claridad, acidez definida y notas más transparentes del origen. Riesgos: fermentación excesiva, lavado deficiente, agua contaminada o secado demasiado rápido/lento.</p></article><article class="coffee-card"><h4>Natural / seco en cereza</h4><div class="coffee-steps"><div class="coffee-step">🍒<b>Cereza entera</b><span>Selección y flotación.</span></div><div class="coffee-step">☀<b>Secado</b><span>Fruta completa sobre cama/patio.</span></div><div class="coffee-step">↻<b>Volteos</b><span>Uniformidad y ventilación.</span></div><div class="coffee-step">🫘<b>Trilla</b><span>Retirar cáscaras secas.</span></div></div><p>Puede aumentar percepción frutal, dulzor y cuerpo. Riesgos: sobrefermentación, moho, secado desigual y sabores a fruta pasada.</p></article><article class="coffee-card"><h4>Honey / pulped natural</h4><p>Se despulpa y se seca con parte del mucílago adherido. “Yellow, red, black honey” no es una escala universal: los nombres pueden referirse a cantidad de mucílago, exposición solar, sombra, volteos o duración según productor.</p><p>Perfil posible: balance entre limpieza del lavado y dulzor/cuerpo del natural. El control de espesor, volteo y secado es crucial porque el mucílago aumenta el riesgo de pegado y heterogeneidad.</p></article><article class="coffee-card"><h4>Anaeróbico</h4><p>Describe fermentación en un ambiente con oxígeno limitado, a menudo en tanque cerrado; puede aplicarse a cereza entera o café despulpado. El tanque puede tener válvula, pero “sellado” no garantiza anaerobiosis perfecta.</p><p>Registra tiempo, temperatura, pH/Brix cuando proceda, presión, masa, estado de madurez y limpieza. Puede producir perfiles intensos y frutales, pero tiempos más largos no son automáticamente mejores.</p></article><article class="coffee-card"><h4>Carbonic maceration</h4><p>Inspirado en técnicas enológicas: cerezas enteras en ambiente enriquecido con CO₂ y oxígeno limitado, con transformaciones intracelulares y microbianas. Requiere control de gas, temperatura, madurez y duración; no es sinónimo de cualquier anaeróbico.</p></article><article class="coffee-card"><h4>Fermentación láctica, inoculada y controlada</h4><p>Algunos productores seleccionan condiciones o cultivos para favorecer perfiles específicos. Debe documentarse cepa o cultivo, dosis, temperatura, tiempo, pH y resultado. Un perfil “yogur” o “láctico” no prueba por sí mismo que se usó una bacteria concreta.</p></article><article class="coffee-card"><h4>Descafeinización y procesos emergentes</h4><p>El café verde puede descafeinarse mediante agua, acetato de etilo, cloruro de metileno o CO₂ supercrítico, según la planta y regulación. También hay procesos experimentales con maceración, choque térmico, levaduras o fermentaciones mixtas. Pide ficha técnica y no deduzcas el método solo por el sabor.</p></article><article class="coffee-card"><h4>Secado: camas africanas, patios y guardiolas</h4><ul><li><b>Camas elevadas:</b> flujo de aire por arriba y abajo, capa delgada, volteo frecuente, protección de lluvia/rocío.</li><li><b>Patio:</b> económico y con buena radiación; requiere capa uniforme, volteo, drenaje y protección nocturna.</li><li><b>Guardiola/secadora mecánica:</b> controla flujo de aire y temperatura, pero exceso de calor puede endurecer exterior y secar desigual.</li><li><b>Híbrido:</b> presecado solar y acabado mecánico; requiere controlar transiciones.</li></ul><p>El objetivo es secar uniformemente y almacenar estable, no alcanzar una humedad cuanto antes. Controla humedad con equipo calibrado y deja equilibrar el lote antes de medir de nuevo.</p></article></div>
 <div class="coffee-card wide" style="margin-top:12px"><h4>Diagrama de decisiones de secado</h4><div class="coffee-steps"><div class="coffee-step">01<b>Preparar</b><span>Separar por madurez, retirar flotadores y registrar lote.</span></div><div class="coffee-step">02<b>Secar</b><span>Capa fina, sombra/sol según fase y volteos regulares.</span></div><div class="coffee-step">03<b>Medir</b><span>Tomar muestras representativas; no fiarse solo del tacto.</span></div><div class="coffee-step">04<b>Estabilizar</b><span>Reposo/equilibrio, control de humedad y envase barrera.</span></div></div><div class="coffee-callout"><b>Señales de alarma:</b> olor a moho, temperatura anómala en masa de café, calentamiento, zonas húmedas, manchas, condensación o variación amplia entre muestras. Aísla el lote e investiga; no mezcles para ocultar el defecto.</div></div>`,
@@ -1090,8 +1161,200 @@ renderWheel();nxPickFamily(0);renderScores();
 })();
 </script>
 
+<style>.nx-module-ambient{position:relative;overflow:hidden}.nx-module-ambient .nx-ambient-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.nx-module-ambient .nx-video-overlay{position:relative;z-index:1}.nx-module-ambient .nx-video-source{position:relative;z-index:2}</style>
+<script id="nx-roast-lab-interactivity">
+(function(){
+function initRoastLab(){
+ const phase=document.getElementById('nxRoastPhase'),time=document.getElementById('nxRoastTime');
+ const curve=document.getElementById('nxRoastCurve'),point=document.getElementById('nxRoastPoint');
+ const band=document.getElementById('nxRoastPhaseBand'),exp=document.getElementById('nxRoastExplanation'),axis=document.getElementById('nxRoastAxisEnd');
+ const rows=document.getElementById('nxRoastDataRows');
+ if(!phase||phase.dataset.ready)return; phase.dataset.ready='1';
+ const info={
+ dry:{title:'Secado · qué ocurre:',text:'El grano pierde humedad y cambia de verde a amarillo. Observa el color, el olor y la recuperación térmica tras la carga. Evita interpretar una sola temperatura sin conocer la máquina y el tamaño de carga.'},
+ maillard:{title:'Maillard · qué ocurre:',text:'Las reacciones de pardeamiento contribuyen al color y a los precursores aromáticos. Observa olor a cereal/pan, color y evolución de RoR. Un descenso brusco o un aumento descontrolado requiere revisar el perfil completo, no aplicar una receta universal.'},
+ development:{title:'Desarrollo · qué ocurre:',text:'Esta fase se cuenta desde el inicio del primer crack hasta la descarga. Tiempo, energía y RoR influyen en solubilidad y balance sensorial; más desarrollo no significa automáticamente mejor taza. Registra el crack real de tu lote.'}
+ };
+ function updatePhase(){
+  const v=info[phase.value]||info.dry;
+  const t=Number(time.value)||10;
+  if(point){point.setAttribute('cx',phase.value==='dry'?180:phase.value==='maillard'?410:620);point.setAttribute('cy',phase.value==='dry'?190:phase.value==='maillard'?100:55);}
+  if(band){band.setAttribute('x',phase.value==='dry'?62:phase.value==='maillard'?282:542);band.setAttribute('width',phase.value==='dry'?220:phase.value==='maillard'?260:180);}
+  if(axis)axis.textContent=t+' min';
+  if(exp)exp.innerHTML='<b>'+v.title+'</b> '+v.text;
+ }
+ function getRows(){
+  return Array.from(rows.querySelectorAll('tr')).map((tr,i)=>{
+   const inputs=tr.querySelectorAll('input');
+   return {t:Number(inputs[0].value),temp:Number(inputs[1].value),i,valid:inputs[0].value!==''&&inputs[1].value!==''&&Number.isFinite(Number(inputs[0].value))&&Number.isFinite(Number(inputs[1].value))&&Number(inputs[0].value)>=0&&Number(inputs[1].value)>=0&&Number(inputs[1].value)<=300};
+  }).filter(p=>p.valid).sort((a,b)=>a.t-b.t);
+ }
+ function updateData(){
+  const data=getRows(),msg=document.getElementById('nxRoastDataMessage');
+  const svg=document.getElementById('nxRoastChart');
+  if(!svg||!rows)return;
+  // Clear only previously generated data overlays.
+  svg.querySelectorAll('.nx-roast-user-layer').forEach(n=>n.remove());
+  const ns='http://www.w3.org/2000/svg';
+  const layer=document.createElementNS(ns,'g');layer.setAttribute('class','nx-roast-user-layer');
+  const x0=62,y0=28,w=660,h=240;
+  if(data.length<2){
+   if(msg)msg.textContent='Introduce al menos dos filas válidas para dibujar la curva.';
+   setMetrics(data,[]);
+   svg.appendChild(layer);return;
+  }
+  const maxT=Math.max(1,data[data.length-1].t),minTemp=0,maxTemp=260;
+  const px=t=>x0+(t/maxT)*w, py=v=>y0+h-((v-minTemp)/(maxTemp-minTemp))*h;
+  const path=document.createElementNS(ns,'path');
+  path.setAttribute('d',data.map((p,i)=>(i?'L':'M')+px(p.t).toFixed(1)+' '+py(p.temp).toFixed(1)).join(' '));
+  path.setAttribute('fill','none');path.setAttribute('stroke','#f1b94b');path.setAttribute('stroke-width','4');path.setAttribute('stroke-linecap','round');path.setAttribute('stroke-linejoin','round');
+  layer.appendChild(path);
+  data.forEach(p=>{
+   const c=document.createElementNS(ns,'circle');c.setAttribute('cx',px(p.t));c.setAttribute('cy',py(p.temp));c.setAttribute('r','5');c.setAttribute('fill','#f1b94b');c.setAttribute('stroke','#18221d');c.setAttribute('stroke-width','2');layer.appendChild(c);
+   const label=document.createElementNS(ns,'text');label.setAttribute('x',Math.min(x0+w-4,px(p.t)+7));label.setAttribute('y',Math.max(y0+14,py(p.temp)-8));label.setAttribute('fill','#fff8e9');label.setAttribute('font-size','11');label.setAttribute('font-weight','700');label.textContent=Math.round(p.temp)+'°';layer.appendChild(label);
+  });
+  svg.appendChild(layer);
+  const rors=[];
+  for(let i=1;i<data.length;i++){const dt=data[i].t-data[i-1].t;if(dt>0)rors.push((data[i].temp-data[i-1].temp)/dt);}
+  setMetrics(data,rors);
+  const duplicates=data.some((p,i)=>i>0&&p.t===data[i-1].t);
+  if(msg)msg.textContent=duplicates?'Aviso: hay tiempos repetidos. La curva se dibuja, pero usa tiempos distintos para interpretar la tasa de cambio.':'Curva actualizada con tus datos. La línea amarilla representa los puntos introducidos; no se infieren fases automáticas ni se diagnostica calidad solo con temperatura.';
+ }
+ function setMetrics(data,rors){
+  const el=id=>document.getElementById(id);
+  el('nxRoastMetricPoints').textContent=String(data.length);
+  el('nxRoastMetricFinal').textContent=data.length?data[data.length-1].temp+' °C':'—';
+  el('nxRoastMetricDuration').textContent=data.length?data[data.length-1].t+' min':'—';
+  el('nxRoastMetricRor').textContent=rors.length?(rors.reduce((a,b)=>a+b,0)/rors.length).toFixed(1)+' °C/min':'—';
+ }
+ function bindRows(){
+  rows.querySelectorAll('input').forEach(input=>input.addEventListener('input',updateData));
+  rows.querySelectorAll('.nx-roast-remove').forEach(btn=>btn.onclick=()=>{if(rows.rows.length>2){btn.closest('tr').remove();bindRows();updateData();}else{document.getElementById('nxRoastDataMessage').textContent='Conserva al menos dos puntos para dibujar la curva.';}});
+ }
+ phase.addEventListener('change',updatePhase);time.addEventListener('change',updatePhase);
+ document.getElementById('nxRoastAddRow')?.addEventListener('click',()=>{
+  const tr=document.createElement('tr');const last=getRows().slice(-1)[0]||{t:0,temp:25};
+  tr.innerHTML='<td><input type="number" min="0" step="0.1" value="'+(last.t+1)+'" aria-label="Tiempo nuevo punto"></td><td><input type="number" min="0" max="300" step="1" value="'+Math.min(260,last.temp+10)+'" aria-label="Temperatura nuevo punto"></td><td><button type="button" class="nx-roast-remove">Quitar</button></td>';
+  rows.appendChild(tr);bindRows();updateData();
+ });
+ document.getElementById('nxRoastResetData')?.addEventListener('click',()=>{
+  const example=[[0,25],[2,105],[4,150],[6,185],[8,202],[10,210]];
+  rows.innerHTML=example.map((p,i)=>'<tr><td><input type="number" min="0" step="0.1" value="'+p[0]+'" aria-label="Tiempo punto '+(i+1)+'"></td><td><input type="number" min="0" max="300" step="1" value="'+p[1]+'" aria-label="Temperatura punto '+(i+1)+'"></td><td><button type="button" class="nx-roast-remove">Quitar</button></td></tr>').join('');
+  bindRows();updateData();
+ });
+ document.getElementById('nxRoastExportData')?.addEventListener('click',()=>{
+  const data=getRows();const csv='Tiempo_min,Temperatura_grano_C\n'+data.map(p=>p.t+','+p.temp).join('\n');
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='nexora-perfil-tueste.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ });
+ bindRows();updatePhase();updateData();
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initRoastLab);else initRoastLab();
+})();
+</script>
 <script id="nx-module-video-injector">
-(()=>{const cards={"inicio": ["CULTURA · GASTRONOMÍA", "Precisión en cada proceso", "Una mirada breve al trabajo y la técnica detrás de una buena taza.", "https://videos.pexels.com/video-files/4815783/4815783-hd_1920_1080_30fps.mp4", "https://images.pexels.com/photos/3058993/pexels-photo-3058993.jpeg?auto=compress&cs=tinysrgb&w=900", "Pexels"], "cuenta": ["NEXORA · PERFIL PROFESIONAL", "Tu espacio de trabajo", "Un entorno de aprendizaje y práctica gastronómica.", "https://videos.pexels.com/video-files/36200683/36200683-hd_1080_1920_30fps.mp4", "https://images.pexels.com/photos/15054933/pexels-photo-15054933.jpeg?auto=compress&cs=tinysrgb&w=900", "Pexels"], "herramientas": ["INSTRUMENTACIÓN · PRECISIÓN", "Medir para repetir", "Equipos, dosis y variables controladas.", "https://videos.pexels.com/video-files/36841910/36841910-hd_1080_1920_30fps.mp4", "https://images.pexels.com/photos/29624081/pexels-photo-29624081.jpeg?auto=compress&cs=tinysrgb&w=900", "Pexels"], "bitacora": ["LABORATORIO · REGISTRO", "Observar · registrar · comparar", "La repetibilidad empieza con datos claros.", "https://videos.pexels.com/video-files/36841914/36841914-hd_3840_2160_50fps.mp4", "https://images.pexels.com/photos/31272231/pexels-photo-31272231.jpeg?auto=compress&cs=tinysrgb&w=900", "Pexels"], "panaderia": ["PANADERÍA · FERMENTACIÓN", "Tiempo, temperatura y estructura", "La masa cambia con hidratación, fermentación y manejo.", "https://cdn.pixabay.com/video/2020/07/30/45773-444459449_large.mp4", "https://images.pexels.com/photos/1070946/pexels-photo-1070946.jpeg?auto=compress&cs=tinysrgb&w=900", "Pixabay"], "acerca": ["NEXORA · CIENCIA GASTRONÓMICA", "Conocimiento aplicado", "Método profesional para convertir técnica en resultados repetibles.", "https://videos.pexels.com/video-files/4815783/4815783-hd_1920_1080_30fps.mp4", "https://images.pexels.com/photos/3058993/pexels-photo-3058993.jpeg?auto=compress&cs=tinysrgb&w=900", "Pexels"], "costos": ["GESTIÓN · CONTROL DE COSTOS", "Cada gramo cuenta", "La precisión técnica también sostiene decisiones de negocio.", "https://videos.pexels.com/video-files/36841910/36841910-hd_1080_1920_30fps.mp4", "https://images.pexels.com/photos/29624081/pexels-photo-29624081.jpeg?auto=compress&cs=tinysrgb&w=900", "Pexels"], "pizzaiolo": ["PIZZA · FERMENTACIÓN Y HORNO", "De la masa al cornicione", "Fermentación, formado y cocción construyen el carácter de la pizza.", "https://cdn.pixabay.com/video/2020/07/30/45773-444459449_large.mp4", "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg?auto=compress&cs=tinysrgb&w=900", "Pixabay"]};const boot=()=>{Object.entries(cards).forEach(([id,cfg])=>{const section=document.getElementById(id);if(!section||section.querySelector('.nx-module-ambient'))return;const box=document.createElement('article');box.className='nx-module-ambient';box.setAttribute('aria-label',cfg[0]+' '+cfg[1]);box.innerHTML='<video autoplay muted loop playsinline preload="auto" poster="'+cfg[4]+'" aria-label="Video ambiental de '+cfg[1]+'"><source src="'+cfg[3]+'" type="video/mp4"></video><div class="nx-video-overlay"><span>'+cfg[0]+'</span><b>'+cfg[1]+'</b><small>'+cfg[2]+'</small></div><a class="nx-video-source" href="'+(cfg[5]==='Pixabay'?'https://pixabay.com/videos/':'https://www.pexels.com/videos/')+'" target="_blank" rel="noopener noreferrer">Video: '+cfg[5]+'</a>';const intro=section.querySelector('.section-intro,.hero,.editorial-banner,.card');if(intro&&intro.parentNode===section)intro.insertAdjacentElement('afterend',box);else section.insertAdjacentElement('afterbegin',box);const v=box.querySelector('video');v.muted=true;v.defaultMuted=true;v.playsInline=true;const attempt=()=>{const p=v.play();if(p&&p.catch)p.catch(()=>{});};if(v.readyState>=2)attempt();else v.addEventListener('canplay',attempt,{once:true});});};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();})();
+(()=>{const cards={"inicio": ["CULTURA · GASTRONOMÍA", "Precisión en cada proceso", "Una mirada breve al trabajo y la técnica detrás de una buena taza.", "https://videos.pexels.com/video-files/4815784/4815784-hd_1920_1080_30fps.mp4", "https://images.pexels.com/photos/3058993/pexels-photo-3058993.jpeg?auto=compress&cs=tinysrgb&w=900", "Pexels"], "cuenta": ["NEXORA · PERFIL PROFESIONAL", "Tu espacio de trabajo", "Un entorno de aprendizaje y práctica gastronómica.", "https://videos.pexels.com/video-files/32941224/32941224-hd_2160_3840_30fps.mp4", "https://images.pexels.com/photos/15054933/pexels-photo-15054933.jpeg?auto=compress&cs=tinysrgb&w=900", "Pexels"], "herramientas": ["INSTRUMENTACIÓN · PRECISIÓN", "Medir para repetir", "Equipos, dosis y variables controladas.", "https://videos.pexels.com/video-files/36841910/36841910-hd_1080_1920_30fps.mp4", "https://images.pexels.com/photos/29624081/pexels-photo-29624081.jpeg?auto=compress&cs=tinysrgb&w=900", "Pexels"], "bitacora": ["LABORATORIO · REGISTRO", "Observar · registrar · comparar", "La repetibilidad empieza con datos claros.", "https://videos.pexels.com/video-files/36841914/36841914-hd_3840_2160_50fps.mp4", "https://images.pexels.com/photos/31272231/pexels-photo-31272231.jpeg?auto=compress&cs=tinysrgb&w=900", "Pexels"], "panaderia": ["PANADERÍA · FERMENTACIÓN", "Tiempo, temperatura y estructura", "La masa cambia con hidratación, fermentación y manejo.", "https://cdn.pixabay.com/video/2020/07/30/45773-444459449_large.mp4", "https://images.pexels.com/photos/1070946/pexels-photo-1070946.jpeg?auto=compress&cs=tinysrgb&w=900", "Pixabay"], "acerca": ["NEXORA · CIENCIA GASTRONÓMICA", "Conocimiento aplicado", "Método profesional para convertir técnica en resultados repetibles.", "https://videos.pexels.com/video-files/4815784/4815784-hd_1920_1080_30fps.mp4", "https://images.pexels.com/photos/3058993/pexels-photo-3058993.jpeg?auto=compress&cs=tinysrgb&w=900", "Pexels"], "costos": ["GESTIÓN · CONTROL DE COSTOS", "Cada gramo cuenta", "La precisión técnica también sostiene decisiones de negocio.", "https://videos.pexels.com/video-files/36841910/36841910-hd_1080_1920_30fps.mp4", "https://images.pexels.com/photos/29624081/pexels-photo-29624081.jpeg?auto=compress&cs=tinysrgb&w=900", "Pexels"], "pizzaiolo": ["PIZZA · FERMENTACIÓN Y HORNO", "De la masa al cornicione", "Fermentación, formado y cocción construyen el carácter de la pizza.", "https://cdn.pixabay.com/video/2020/07/30/45773-444459449_large.mp4", "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg?auto=compress&cs=tinysrgb&w=900", "Pixabay"]};const boot=()=>{Object.entries(cards).forEach(([id,cfg])=>{const section=document.getElementById(id);if(!section||section.querySelector('.nx-module-ambient'))return;const box=document.createElement('article');box.className='nx-module-ambient';box.setAttribute('aria-label',cfg[0]+' '+cfg[1]);box.innerHTML='<video autoplay muted loop playsinline preload="auto" poster="'+cfg[4]+'" aria-label="Video ambiental de '+cfg[1]+'"><source src="'+cfg[3]+'" type="video/mp4"></video><div class="nx-video-overlay"><span>'+cfg[0]+'</span><b>'+cfg[1]+'</b><small>'+cfg[2]+'</small></div><a class="nx-video-source" href="'+(cfg[5]==='Pixabay'?'https://pixabay.com/videos/':'https://www.pexels.com/videos/')+'" target="_blank" rel="noopener noreferrer">Video: '+cfg[5]+'</a>';const intro=section.querySelector('.section-intro,.hero,.editorial-banner,.card');if(intro&&intro.parentNode===section)intro.insertAdjacentElement('afterend',box);else section.insertAdjacentElement('afterbegin',box);const v=box.querySelector('video');v.muted=true;v.defaultMuted=true;v.playsInline=true;const attempt=()=>{const p=v.play();if(p&&p.catch)p.catch(()=>{});};if(v.readyState>=2)attempt();else v.addEventListener('canplay',attempt,{once:true});});};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();})();
+</script>
+
+
+<style id="nx-layout-video-stability-fix">
+/* Distribución consistente sin alterar identidad visual ni estructura de módulos */
+:root{--nx-gap:clamp(12px,1.5vw,20px)}
+main, .main-content, #app, .app-content, .content-area{min-width:0;max-width:100%}
+main :is(.grid,.cards-grid,.tools-grid,.module-grid,.dashboard-grid,.recipe-grid,.coffee-grid){grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:var(--nx-gap);align-items:stretch}
+main :is(.card,.tool-card,.module-card,.coffee-card,.recipe-card,.panel,.section-card){min-width:0;max-width:100%;height:auto;align-self:stretch;box-sizing:border-box}
+main :is(img,svg,canvas,video){max-width:100%}
+main :is(.section,.module,.panel,.content-section){margin-block:clamp(14px,2vw,26px)}
+main :is(.section-header,.module-header,.panel-header){display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.nx-editorial-video-strip{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;align-items:stretch;gap:14px!important;width:100%;min-width:0}
+.nx-video-card{min-width:0;height:clamp(180px,22vw,260px)!important;min-height:180px!important;background:#17251e!important;isolation:isolate;contain:paint}
+.nx-module-video{display:block!important;visibility:visible!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;opacity:.72!important;z-index:0!important;pointer-events:none}
+.nx-video-card:after{z-index:1!important}.nx-video-overlay{z-index:2!important}.nx-video-source{z-index:4!important}
+@media(max-width:760px){.nx-editorial-video-strip{grid-template-columns:minmax(0,1fr)!important}.nx-video-card{height:190px!important;min-height:190px!important}main :is(.grid,.cards-grid,.tools-grid,.module-grid,.dashboard-grid,.recipe-grid,.coffee-grid){grid-template-columns:minmax(0,1fr)!important}}
+</style>
+
+
+<style id="nx-feature-photo-purpose">
+/* La fotografía principal de Barismo debe comunicar algo, no quedar como imagen aislada. */
+#barismo .nx-feature-photo{position:relative!important;overflow:hidden!important}
+#barismo .nx-feature-photo:after{content:"DEL GRANO A LA TAZA  ·  ORIGEN, TOSTIÓN Y EXTRACCIÓN";position:absolute;left:16px;right:16px;bottom:16px;padding:12px 14px;border:1px solid rgba(210,187,125,.45);border-radius:10px;background:rgba(23,33,27,.84);color:#F4F1E9;font:700 10px/1.5 Montserrat,Arial,sans-serif;letter-spacing:.12em;text-shadow:none;box-sizing:border-box}
+@media(max-width:600px){#barismo .nx-feature-photo:after{left:10px;right:10px;bottom:10px;font-size:9px;padding:9px 10px}}
+/* Mostrar un estado legible cuando una fuente no pueda cargarse; no fingir que el video se reprodujo. */
+.nx-video-card.nx-video-failed:before,.nx-module-ambient.nx-video-failed:before{content:"VIDEO NO DISPONIBLE · revisa la conexión o la fuente";position:absolute;z-index:5;left:12px;right:12px;bottom:12px;padding:8px 10px;border-radius:8px;background:rgba(23,33,27,.92);border:1px solid rgba(210,187,125,.55);color:#F4F1E9;font:600 11px/1.4 Montserrat,Arial,sans-serif}
+</style>
+
+<script id="nx-video-single-controller">
+(()=>{
+  const selector='.nx-module-video, .nx-module-ambient video';
+  const observed=new WeakSet();
+  function mark(v,state){v.dataset.playback=state;const card=v.closest('.nx-video-card,.nx-module-ambient');if(card)card.classList.toggle('nx-video-failed',state==='source-error');}
+  function attempt(v){
+    if(!v.isConnected)return;
+    v.muted=true;v.defaultMuted=true;v.autoplay=true;v.loop=true;v.playsInline=true;v.preload='metadata';
+    ['muted','autoplay','loop','playsinline'].forEach(a=>v.setAttribute(a,''));
+    const p=v.play();
+    if(p&&typeof p.then==='function')p.then(()=>mark(v,'playing')).catch(()=>mark(v,v.error?'source-error':'autoplay-blocked'));
+  }
+  function setup(v){
+    if(observed.has(v))return;observed.add(v);
+    v.addEventListener('playing',()=>mark(v,'playing'));
+    v.addEventListener('error',()=>mark(v,'source-error'));
+    v.addEventListener('loadeddata',()=>{if(v.paused)attempt(v);else mark(v,'playing')});
+    v.addEventListener('canplay',()=>{if(v.paused)attempt(v)});
+    if(v.readyState>=2)attempt(v);else {try{v.load()}catch(e){}}
+  }
+  function scan(root=document){if(root.matches&&root.matches('video'))setup(root);root.querySelectorAll?.(selector).forEach(setup)}
+  function boot(){scan();const mo=new MutationObserver(records=>records.forEach(r=>r.addedNodes.forEach(n=>{if(n.nodeType===1)scan(n)})));mo.observe(document.documentElement,{childList:true,subtree:true});document.addEventListener('visibilitychange',()=>{if(!document.hidden)document.querySelectorAll(selector).forEach(v=>{if(v.paused)attempt(v)})});['pointerdown','touchstart','keydown'].forEach(e=>document.addEventListener(e,()=>document.querySelectorAll(selector).forEach(v=>{if(v.paused)attempt(v)}),{once:true,passive:true}));}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+})();
+</script>
+
+<script id="nx-video-source-fallback">
+(function(){
+  const sources = [
+    {match:"4815784", page:"https://www.pexels.com/video/roasting-coffee-beans-machine-4815784/"},
+    {match:"32941224", page:"https://www.pexels.com/video/slow-motion-coffee-bean-roasting-process-32941224/"}
+  ];
+  function addFallback(video){
+    if(!video || video.dataset.nxFallbackBound) return;
+    video.dataset.nxFallbackBound="1";
+    video.addEventListener("error", function(){
+      const current=(video.currentSrc || video.querySelector("source")?.src || "");
+      const item=sources.find(x=>current.includes(x.match));
+      if(!item || video.parentElement?.querySelector(".nx-video-source-fallback-link")) return;
+      const a=document.createElement("a");
+      a.className="nx-video-source-fallback-link";
+      a.href=item.page;
+      a.target="_blank";
+      a.rel="noopener noreferrer";
+      a.textContent="Abrir video en Pexels";
+      a.style.cssText="display:inline-flex;margin-top:8px;padding:7px 11px;border:1px solid #b79b62;border-radius:8px;color:inherit;text-decoration:none;font-size:12px";
+      video.insertAdjacentElement("afterend",a);
+    });
+  }
+  function scan(root){(root||document).querySelectorAll("video").forEach(addFallback);}
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",()=>scan());
+  else scan();
+  new MutationObserver(records=>records.forEach(r=>r.addedNodes.forEach(n=>{
+    if(n.nodeType===1){ if(n.matches?.("video")) addFallback(n); scan(n); }
+  }))).observe(document.documentElement,{childList:true,subtree:true});
+})();
+</script>
+
+
+<script id="nx-pwa-registration">
+(function () {
+  if (!('serviceWorker' in navigator) || location.protocol !== 'https:') return;
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./sw.js')
+      .then(function (registration) {
+        console.info('NEXORA: PWA preparada', registration.scope);
+      })
+      .catch(function (error) {
+        console.warn('NEXORA: no se pudo registrar el service worker', error);
+      });
+  });
+})();
 </script>
 
 </body></html>

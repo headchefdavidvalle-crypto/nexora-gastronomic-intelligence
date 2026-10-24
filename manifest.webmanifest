@@ -1,0 +1,32 @@
+{
+  "id": "./",
+  "name": "NEXORA — Inteligencia Gastronómica",
+  "short_name": "NEXORA",
+  "description": "Laboratorio gastronómico de barismo, tueste, pizza, panadería y gestión.",
+  "lang": "es",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#18221d",
+  "theme_color": "#202820",
+  "categories": [
+    "education",
+    "food",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "./icons/nexora-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/nexora-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
