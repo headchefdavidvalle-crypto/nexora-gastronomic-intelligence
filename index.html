@@ -31,29 +31,35 @@
 @font-face{font-family:'Playfair Display';src:url(fonts/playfair.woff2) format('woff2');font-weight:400 900;font-style:normal;font-display:swap}
 @font-face{font-family:'Playfair Display';src:url(fonts/playfair-italic.woff2) format('woff2');font-weight:400 900;font-style:italic;font-display:swap}
 :root{
-  color-scheme:dark;
-  --ink:#0E1511; --bg:#131C16; --surface:#19241D; --surface-2:#1F2C24; --surface-3:#26352B;
-  --line:rgba(196,169,110,.16); --line-strong:rgba(196,169,110,.38);
-  --gold:#C4A96E; --gold-hi:#DFC88F; --gold-lo:#8E7849;
-  --ivory:#F3EEE2; --text:#E6E3D8; --muted:#A3AE9F; --sage:#8FA388;
-  --ok:#8DB89A; --warn:#D6B25E; --bad:#C8735B;
+  color-scheme:light;
+  --deep:#13211A; --deep-2:#1C2E24; --on-deep:#F3EEE2;
+  --btn:#C9AE72; --btn-hi:#D8C08A;
+  --ink:#FFFFFF; --bg:#F2EEE4; --surface:#FFFDF8; --surface-2:#F6F2E9; --surface-3:#E8E1D1;
+  --line:rgba(19,33,26,.11); --line-strong:rgba(19,33,26,.24);
+  --gold:#8A6B2C; --gold-hi:#6E5520; --gold-lo:#B49A62;
+  --ivory:#13211A; --text:#26332B; --muted:#5B675E; --sage:#4F6B55;
+  --ok:#3F8A5A; --warn:#B58A1E; --bad:#B4513A;
   --r-asym:2px 18px 2px 18px; --r-asym-lg:2px 30px 2px 30px; --r-asym-sm:2px 12px 2px 12px;
-  --shadow:0 18px 40px -22px rgba(0,0,0,.65);
+  --shadow:0 14px 34px -24px rgba(19,33,26,.35);
   --serif:'Playfair Display',Georgia,'Times New Roman',serif;
   --sans:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif;
   --ease:cubic-bezier(.2,.7,.2,1);
 }
+/* Bloques de marca: verde profundo con oro champán */
+aside,.hero,.section-intro,.nx-coffee-feature,.nx-roast-chart-wrap,.work-tabs{
+  --ink:#0E1511;--surface:#19241D;--surface-2:#1F2C24;--surface-3:#26352B;
+  --line:rgba(201,174,114,.18);--line-strong:rgba(201,174,114,.42);
+  --gold:#C9AE72;--gold-hi:#E0CA92;--gold-lo:#8E7849;
+  --ivory:#F3EEE2;--text:#E6E3D8;--muted:#AEB8AA;--sage:#9DB196;color:var(--text)}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:var(--bg)}
-body{margin:0;min-height:100dvh;background:
-  radial-gradient(900px 500px at 92% -8%,rgba(196,169,110,.07),transparent 60%),
-  radial-gradient(700px 600px at -10% 110%,rgba(143,163,136,.06),transparent 60%),var(--bg);
-  color:var(--text);font:400 14.5px/1.62 var(--sans);letter-spacing:-.005em;overflow-x:hidden}
+body{margin:0;min-height:100dvh;background:var(--bg);
+  color:var(--text);font:400 15px/1.6 var(--sans);letter-spacing:-.005em;overflow-x:hidden}
 img,svg,canvas{max-width:100%}
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
 a{color:var(--gold-hi);text-underline-offset:3px}
-::selection{background:rgba(196,169,110,.35);color:var(--ivory)}
+::selection{background:rgba(201,174,114,.45);color:var(--deep)}
 :focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
 h1,h2,h3,h4{font-family:var(--serif);color:var(--ivory);font-weight:600;letter-spacing:-.015em;line-height:1.15;margin:0 0 .45em}
 h2{font-size:22px}h3{font-size:19px}h4{font-size:16px}
@@ -75,8 +81,8 @@ nav{display:grid;gap:3px}
 nav button{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:10px 12px;border:0;border-radius:var(--r-asym-sm);
   background:transparent;color:var(--muted);font-size:13px;font-weight:500;text-align:left;position:relative;transition:background .2s,color .2s}
 nav button svg{width:18px;height:18px;flex:0 0 18px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-nav button:hover{color:var(--ivory);background:rgba(196,169,110,.06)}
-nav button.active{color:var(--ivory);background:linear-gradient(90deg,rgba(196,169,110,.16),rgba(196,169,110,.02))}
+nav button:hover{color:var(--ivory);background:rgba(201,174,114,.08)}
+nav button.active{color:var(--ivory);background:linear-gradient(90deg,rgba(201,174,114,.2),rgba(201,174,114,.03))}
 nav button.active::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:2px;background:var(--gold)}
 nav button.active svg{color:var(--gold-hi)}
 .side-foot{margin-top:auto;padding:16px 12px 0;border-top:1px solid var(--line);font:600 9px/1.9 var(--sans);letter-spacing:.2em;color:var(--muted)}
@@ -87,7 +93,7 @@ main{min-width:0;width:100%;max-width:1260px;margin:0 auto;padding:30px clamp(18
 #heading{font:italic 500 clamp(17px,2vw,22px)/1.2 var(--serif);color:var(--ivory);margin:6px 0 0}
 .status{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid var(--line-strong);border-radius:999px;
   font:700 9px/1 var(--sans);letter-spacing:.16em;color:var(--sage);white-space:nowrap}
-.status::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(141,184,154,.18)}
+.status::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(63,138,90,.18)}
 
 /* ---------- Secciones ---------- */
 .section{display:none}
@@ -106,7 +112,7 @@ main{min-width:0;width:100%;max-width:1260px;margin:0 auto;padding:30px clamp(18
 /* Hero de inicio */
 .hero{position:relative;overflow:hidden;padding:clamp(28px,5vw,64px);border:1px solid var(--line-strong);border-radius:var(--r-asym-lg);
   background:linear-gradient(115deg,var(--ink) 0%,var(--surface-2) 58%,#2E3F32 100%);box-shadow:var(--shadow)}
-.hero::after{content:"N";position:absolute;right:-1%;top:50%;transform:translateY(-52%);font:700 clamp(220px,32vw,420px)/1 var(--serif);
+.hero::after{content:"N";opacity:.9;position:absolute;right:-1%;top:50%;transform:translateY(-52%);font:700 clamp(220px,32vw,420px)/1 var(--serif);
   color:transparent;-webkit-text-stroke:1px rgba(196,169,110,.22);pointer-events:none}
 .hero>*{position:relative;z-index:1}
 .hero h2{font-size:clamp(34px,5.4vw,64px);line-height:1.02;max-width:720px;margin:18px 0 16px}
@@ -146,21 +152,21 @@ main{min-width:0;width:100%;max-width:1260px;margin:0 auto;padding:30px clamp(18
 .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .field{display:grid;gap:6px;margin:12px 0}
 label{font-size:12px;font-weight:600;letter-spacing:.01em}
-input,select,textarea{width:100%;min-width:0;min-height:44px;padding:11px 13px;background:var(--ink);border:1px solid rgba(196,169,110,.24);
+input,select,textarea{width:100%;min-width:0;min-height:44px;padding:11px 13px;background:var(--ink);border:1px solid var(--line-strong);
   border-radius:10px;color:var(--ivory);outline:none;transition:border-color .2s,box-shadow .2s}
-input::placeholder,textarea::placeholder{color:#7F8B7D}
-input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(196,169,110,.16)}
+input::placeholder,textarea::placeholder{color:#97A096}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,174,114,.25)}
 select option{background:var(--ink);color:var(--ivory)}
 textarea{min-height:100px;resize:vertical}
 input[type=range]{min-height:0;padding:0;border:0;background:transparent;accent-color:var(--gold);box-shadow:none}
 input[readonly]{color:var(--gold-hi)}
 
-.btn,.coffee-action{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;margin-top:12px;padding:11px 18px;
-  border:1px solid var(--gold);border-radius:var(--r-asym-sm);background:var(--gold);color:var(--ink);font:700 12.5px/1 var(--sans);letter-spacing:.02em;
+.btn,.coffee-action{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;margin-top:12px;padding:12px 20px;
+  border:1px solid var(--btn);border-radius:var(--r-asym-sm);background:var(--btn);color:var(--deep);font:700 13.5px/1 var(--sans);letter-spacing:.02em;
   text-decoration:none;transition:background .2s,transform .2s,border-color .2s}
-.btn:hover,.coffee-action:hover{background:var(--gold-hi);transform:translateY(-1px)}
+.btn:hover,.coffee-action:hover{background:var(--btn-hi);transform:translateY(-1px)}
 .btn.alt{background:transparent;color:var(--ivory);border-color:var(--line-strong)}
-.btn.alt:hover{border-color:var(--gold);background:rgba(196,169,110,.08)}
+.btn.alt:hover{border-color:var(--ivory);background:rgba(19,33,26,.04)}
 .btn.tiny{min-height:32px;padding:6px 11px;margin:4px 4px 0 0;font-size:11px}
 .btn:disabled{opacity:.35;cursor:not-allowed;transform:none}
 .btn-row{display:flex;flex-wrap:wrap;gap:8px}
@@ -175,7 +181,7 @@ input[readonly]{color:var(--gold-hi)}
 .diagnosis.good{border-left-color:var(--ok)}
 .diagnosis.warn{border-left-color:var(--warn)}
 .tag,.pill,.coffee-pill{display:inline-block;padding:5px 10px;margin:2px 4px 2px 0;border:1px solid var(--line-strong);border-radius:999px;
-  background:rgba(196,169,110,.07);font:700 9.5px/1.2 var(--sans);letter-spacing:.12em;color:var(--gold-hi)}
+  background:rgba(201,174,114,.12);font:700 9.5px/1.2 var(--sans);letter-spacing:.12em;color:var(--gold-hi)}
 .guide-strip{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:0 14px 14px 0;background:var(--surface)}
 .guide-icon{flex:0 0 40px;height:40px;display:grid;place-items:center;border:1px solid var(--line-strong);border-radius:2px 10px 2px 10px;font:600 14px var(--serif);color:var(--gold-hi)}
 .guide-strip p{margin:3px 0 0;font-size:12.5px;color:var(--muted)}
@@ -199,22 +205,23 @@ input[readonly]{color:var(--gold-hi)}
 
 /* ---------- Panadería ---------- */
 .ingredient-row{display:grid;grid-template-columns:minmax(90px,1.2fr) minmax(70px,.7fr) minmax(90px,1fr);gap:8px;align-items:center;margin:8px 0}
-.ingredient-row output{padding:11px 10px;border-radius:10px;background:var(--surface-2);color:var(--gold-hi);font-variant-numeric:tabular-nums;font-weight:600;text-align:right}
+.ingredient-row output{padding:11px 10px;border-radius:10px;background:var(--surface-2);border:1px solid var(--line);color:var(--gold-hi);font-variant-numeric:tabular-nums;font-weight:600;text-align:right}
 .ingredient-row:first-of-type label,.ingredient-row.head label{font:700 9.5px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
 
 /* ---------- Barismo: cronómetro ---------- */
 .baker-avatar{display:flex;align-items:center;gap:14px;padding:14px;border:1px solid var(--line);border-radius:var(--r-asym-sm);background:var(--surface-2)}
 .avatar-icon{flex:0 0 46px;height:46px;display:grid;place-items:center;border:1px solid var(--line-strong);border-radius:50%;color:var(--gold-hi)}
 .avatar-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5}
-.clock-face{position:relative;width:196px;height:196px;margin:20px auto;border-radius:50%;display:grid;place-items:center;
-  border:1px solid var(--gold);background:radial-gradient(circle at 40% 30%,var(--surface-3),var(--ink) 72%);
-  box-shadow:0 0 0 8px rgba(196,169,110,.06),inset 0 0 30px rgba(0,0,0,.4)}
+.clock-face{position:relative;width:206px;height:206px;margin:20px auto;border-radius:50%;display:grid;place-items:center;
+  border:1px solid var(--gold);background:radial-gradient(circle at 40% 30%,#26352B,#0E1511 72%);
+  box-shadow:0 0 0 8px rgba(201,174,114,.14),0 18px 30px -18px rgba(19,33,26,.5)}
 .clock-face::before{content:"";position:absolute;inset:10px;border-radius:50%;border:1px dashed rgba(196,169,110,.25)}
-.clock-time{font:600 32px/1 var(--sans);color:var(--ivory);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-.clock-face .eyebrow{margin:8px 0 0}
+.clock-time{font:600 34px/1 var(--sans);color:#F3EEE2;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.clock-face .eyebrow{margin:8px 0 0;color:#C9AE72}
+.clock-face::before{border-color:rgba(201,174,114,.3)}
 .stage-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
 .stage-pill{padding:6px 11px;border:1px solid var(--line);border-radius:999px;font-size:11px;color:var(--muted)}
-.stage-pill.active{border-color:var(--gold);background:var(--gold);color:var(--ink);font-weight:700}
+.stage-pill.active{background:var(--deep);border-color:var(--deep);color:var(--on-deep);font-weight:700}
 .timer-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 8px;margin-top:6px}
 .timer-buttons .btn{width:100%}
 
@@ -259,8 +266,8 @@ input[readonly]{color:var(--gold-hi)}
 .nx-wheel-panel,.nx-wheel-detail,.nx-spider-chart{min-width:0;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
 .nx-wheel-wrap{max-width:380px;margin:auto}
 .nx-wheel-wrap svg,.nx-spider-chart svg{display:block;width:100%;height:auto;overflow:visible}
-.nx-wheel-segment{cursor:pointer;stroke:var(--ink);stroke-width:1.4;transition:opacity .15s}
-.nx-wheel-segment:hover,.nx-wheel-segment:focus{stroke:var(--ivory);stroke-width:2.5;outline:none}
+.nx-wheel-segment{cursor:pointer;stroke:#fff;stroke-width:1.4;transition:opacity .15s}
+.nx-wheel-segment:hover,.nx-wheel-segment:focus{stroke:var(--deep);stroke-width:2.5;outline:none}
 .nx-wheel-label{font-size:9px;font-weight:600;fill:#FFF8E8;pointer-events:none;text-anchor:middle}
 .nx-wheel-center{font:700 12px var(--sans);fill:var(--gold-hi);letter-spacing:1px}
 .nx-wheel-center-small{font-size:8px;fill:var(--ivory);letter-spacing:1.4px}
@@ -268,15 +275,15 @@ input[readonly]{color:var(--gold-hi)}
 .nx-wheel-selected{font-size:12px;min-height:40px;margin-bottom:6px}
 .nx-flavor-options{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
 .nx-flavor-chip{padding:6px 11px;border:1px solid var(--line-strong);border-radius:999px;background:transparent;color:var(--text);font-size:12px}
-.nx-flavor-chip.selected{background:var(--gold);border-color:var(--gold);color:var(--ink);font-weight:600}
+.nx-flavor-chip.selected{background:var(--deep);border-color:var(--deep);color:var(--on-deep);font-weight:600}
 .nx-spider-section{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
 .nx-slider-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px}
 .nx-slider-tools select{width:auto;min-height:36px;padding:6px 10px}
 .nx-slider-tools .btn{margin-top:0}
-.nx-radar-grid{fill:none;stroke:rgba(196,169,110,.18)}
-.nx-radar-axis{stroke:rgba(196,169,110,.18)}
+.nx-radar-grid{fill:none;stroke:rgba(19,33,26,.12)}
+.nx-radar-axis{stroke:rgba(19,33,26,.12)}
 .nx-radar-label{fill:var(--text);font-size:10px;text-anchor:middle}
-.nx-radar-value{fill:rgba(196,169,110,.2);stroke:var(--gold-hi);stroke-width:2}
+.nx-radar-value{fill:rgba(201,174,114,.3);stroke:var(--gold-hi);stroke-width:2}
 .nx-radar-dot{fill:var(--gold-hi);stroke:var(--ink)}
 .nx-score-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;align-content:start}
 .nx-score-row{padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
@@ -300,7 +307,7 @@ input[readonly]{color:var(--gold-hi)}
 .coffee-tab,.pizza-topic{min-height:40px;padding:9px 15px;border:1px solid var(--line-strong);border-radius:var(--r-asym-sm);background:transparent;
   color:var(--text);font-size:12px;font-weight:600;transition:background .2s,border-color .2s,color .2s}
 .coffee-tab:hover,.pizza-topic:hover{border-color:var(--gold)}
-.coffee-tab.active,.pizza-topic.active{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.coffee-tab.active,.pizza-topic.active{background:var(--deep);border-color:var(--deep);color:var(--on-deep)}
 .coffee-lesson,.pizza-lesson{padding:clamp(16px,2.6vw,28px);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:0 18px 18px 0;background:var(--ink)}
 .coffee-hero,.lesson-title{display:flex;gap:16px;align-items:flex-start;padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid var(--line)}
 .coffee-hero h3,.lesson-title h3{font-size:clamp(21px,2.6vw,30px);margin:4px 0 8px}
@@ -332,7 +339,7 @@ input[readonly]{color:var(--gold-hi)}
 .dough-state b{display:block;font-size:12px;color:var(--ivory)}
 .dough-state small{display:block;margin-top:4px;font-size:10.5px;color:var(--muted)}
 .dough-art{height:72px;display:grid;place-items:center}
-.dough-ball{width:58px;height:46px;border-radius:48% 52% 44% 56%;background:radial-gradient(ellipse at 32% 25%,#F2E3C0,#C7AD79 72%,#8E7449);box-shadow:inset -5px -6px 9px rgba(0,0,0,.25)}
+.dough-ball{border:1px solid rgba(19,33,26,.1);width:58px;height:46px;border-radius:48% 52% 44% 56%;background:radial-gradient(ellipse at 32% 25%,#F2E3C0,#C7AD79 72%,#8E7449);box-shadow:inset -5px -6px 9px rgba(0,0,0,.25)}
 .lesson-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .lesson-links a{padding:9px 13px;border:1px solid var(--line-strong);border-radius:var(--r-asym-sm);font-size:12px;text-decoration:none;color:var(--text)}
 .lesson-links a:hover{border-color:var(--gold);color:var(--gold-hi)}
@@ -344,7 +351,8 @@ input[readonly]{color:var(--gold-hi)}
 .nx-roast-controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0}
 .nx-roast-controls label{display:grid;gap:6px}
 .nx-roast-chart-wrap{overflow-x:auto}
-.nx-roast-chart-wrap svg{min-width:340px;border-radius:12px;background:var(--ink)}
+.nx-roast-chart-wrap{padding:6px;border-radius:14px;background:var(--deep)}
+.nx-roast-chart-wrap svg{min-width:340px;border-radius:12px;background:var(--deep)}
 .nx-roast-legend{display:flex;flex-wrap:wrap;gap:14px;margin:8px 0;font-size:12px}
 .nx-roast-legend span{display:flex;align-items:center;gap:6px}
 .nx-roast-legend i{width:12px;height:12px;border-radius:3px}
@@ -353,7 +361,7 @@ input[readonly]{color:var(--gold-hi)}
 .nx-roast-data-table input{min-height:38px;padding:8px}
 .nx-roast-data-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .nx-roast-data-actions button,.nx-roast-remove{min-height:36px;padding:8px 12px;border:1px solid var(--line-strong);border-radius:var(--r-asym-sm);background:transparent;color:var(--ivory);font-size:12px;font-weight:600}
-.nx-roast-data-actions button:first-child{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.nx-roast-data-actions button:first-child{background:var(--btn);color:var(--deep);border-color:var(--btn)}
 .nx-roast-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-top:14px}
 .nx-roast-metrics div{padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
 .nx-roast-metrics span{display:block;font-size:11px;color:var(--muted)}
@@ -401,7 +409,7 @@ input[readonly]{color:var(--gold-hi)}
 @media(max-width:900px){
   .layout{display:block}
   aside{position:sticky;top:0;z-index:50;height:auto;gap:10px;padding:10px 14px 0;border-right:0;border-bottom:1px solid var(--line);
-    background:rgba(14,21,17,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+    background:rgba(19,33,26,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
   .side-label,.side-foot{display:none}
   .brand img{width:34px;height:34px;flex-basis:34px}
   .brand-word{font-size:17px}
@@ -432,7 +440,7 @@ input[readonly]{color:var(--gold-hi)}
   .hero::after{font-size:240px;right:-12%;opacity:.7}
   .card{padding:18px}
   .card::before{left:18px}
-  .row,.coffee-grid,.lesson-grid,.nx-cupping-grid,.nx-spider-grid,.coffee-quiz,.pizza-recipe-grid{grid-template-columns:minmax(0,1fr)}
+  .coffee-grid,.lesson-grid,.nx-cupping-grid,.nx-spider-grid,.coffee-quiz,.pizza-recipe-grid{grid-template-columns:minmax(0,1fr)}
   .discipline-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .discipline{grid-template-columns:minmax(0,1fr);padding:16px;gap:6px}
   .discipline .d-icon{grid-row:auto;width:42px;height:42px;margin-bottom:6px}
@@ -454,10 +462,69 @@ input[readonly]{color:var(--gold-hi)}
   .creator-signature{text-align:left}
 }
 @media(max-width:380px){
-  .nx-tool-cards,.cost-param-grid,.cost-stat-grid,.nx-score-controls,.timer-buttons{grid-template-columns:minmax(0,1fr)}
+  .row,.nx-tool-cards,.cost-param-grid,.cost-stat-grid,.nx-score-controls,.timer-buttons{grid-template-columns:minmax(0,1fr)}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media print{aside,.topbar,.nexora-footer{display:none}.layout{display:block}body{background:#fff;color:#000}}
+
+/* ================= v5 · Inicio y modos de trabajo ================= */
+.hero-compact{padding:clamp(24px,4vw,44px)}
+.hero-compact h2{font-size:clamp(28px,4.2vw,48px);margin:14px 0 8px}
+.hero-compact p{margin:0}
+.hero-compact::after{font-size:clamp(180px,24vw,300px)}
+.home-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:auto auto;gap:14px}
+.home-tile{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:18px;min-height:150px;padding:22px;text-align:left;
+  border:1px solid var(--line);border-radius:var(--r-asym);background:var(--surface);box-shadow:var(--shadow);color:var(--text);
+  transition:transform .25s var(--ease),border-color .25s,box-shadow .25s}
+.home-tile:hover{transform:translateY(-3px);border-color:var(--gold-lo);box-shadow:0 22px 40px -26px rgba(19,33,26,.5)}
+.home-tile .ht-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:2px 16px 2px 16px;background:var(--deep);color:#E0CA92}
+.home-tile .ht-icon svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.home-tile .ht-text{display:grid;gap:4px}
+.home-tile b{font:600 22px/1.15 var(--serif);color:var(--ivory)}
+.home-tile small{font-size:13px;color:var(--muted)}
+.home-tile .ht-arrow{position:absolute;right:20px;top:20px;font-size:20px;color:var(--gold)}
+.home-tile.featured{grid-row:span 2;justify-content:flex-end;background:linear-gradient(150deg,#1C2E24,#0E1511);border-color:transparent}
+.home-tile.featured .ht-icon{background:var(--btn);color:var(--deep);width:62px;height:62px}
+.home-tile.featured b{font-size:clamp(28px,3vw,38px);color:#F3EEE2}
+.home-tile.featured small{color:#AEB8AA;font-size:14px}
+.home-tile.featured .ht-arrow{color:#E0CA92}
+.home-more{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.home-more .side-label{padding:0 6px 0 0}
+.home-more .btn{margin:0}
+.home-more .btn svg,.sub-tabs svg,.work-tabs svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+.work-tabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:5px;border-radius:var(--r-asym);background:var(--surface)}
+.work-tabs button{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border:0;border-radius:2px 14px 2px 14px;
+  background:transparent;color:var(--muted);font:700 15px/1 var(--sans);letter-spacing:.02em;transition:background .2s,color .2s}
+.work-tabs button.active{background:var(--btn);color:var(--deep)}
+.work-tabs button:not(.active):hover{color:var(--ivory)}
+.section>.work-tabs+.sub-tabs{margin-top:12px}
+.sub-tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.sub-tabs::-webkit-scrollbar{display:none}
+.sub-tabs button{flex:1 0 auto;display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:10px 18px;
+  border:1px solid var(--line-strong);border-radius:var(--r-asym-sm);background:var(--surface);color:var(--text);font-weight:600;font-size:14px}
+.sub-tabs button.active{background:var(--deep);border-color:var(--deep);color:var(--on-deep)}
+#barismo[data-view="aprender"] .sub-tabs{display:none}
+#barismo:not([data-view="calibrar"]) [data-pane="calibrar"],
+#barismo:not([data-view="catar"]) [data-pane="catar"],
+#barismo:not([data-view="historial"]) [data-pane="historial"],
+#barismo:not([data-view="aprender"]) [data-pane="aprender"]{display:none}
+#barismo[data-view="aprender"] #nx-calibration{display:none}
+#barismo .card>.eyebrow{display:none}
+#barismo .card>h2{margin-top:2px}
+
+@media(max-width:900px){
+  .home-grid{grid-template-columns:minmax(0,1fr);gap:10px}
+  .home-tile{flex-direction:row;align-items:center;min-height:84px;padding:16px 18px;gap:16px}
+  .home-tile .ht-arrow{position:static;margin-left:auto}
+  .home-tile.featured{grid-row:auto;flex-direction:column;align-items:flex-start;min-height:180px;padding:22px}
+  .home-tile.featured .ht-arrow{position:absolute;right:20px;top:22px}
+  .home-tile b{font-size:19px}
+  .home-more .btn{flex:1 1 100%}
+}
+
+#barismo .nx-cupping-heading .eyebrow{display:none}
+@media(max-width:640px){.field{margin:10px 0}}
 
 </style>
 </head>
@@ -466,67 +533,38 @@ input[readonly]{color:var(--gold-hi)}
 <aside>
   <a class="brand" href="#inicio" onclick="go('inicio');return false" aria-label="NEXORA, ir al inicio"><img src="nexora-mark.png" alt="" width="46" height="46"><span class="brand-word">NEXORA<small>GASTRONOMIC INTELLIGENCE</small></span></a>
   <div class="side-label">Espacio de trabajo</div>
-  <nav aria-label="Navegación principal"><button class="active" data-page="inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span>Inicio</span></button><button data-page="barismo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h12v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4Z"/><path d="M17 11h2a2 2 0 0 1 0 4h-2M9 3c-1 1.2 1 1.8 0 3.5M13 3c-1 1.2 1 1.8 0 3.5"/></svg><span>Barismo</span></button><button data-page="panaderia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14c-1-3 1-6 4-7 2-1 4 0 5 1 2-1 5 0 6 3 1 3-1 6-4 7H8c-2 0-3-2-4-4Z"/><path d="m8 10 2 3m3-4 1 3m3 0 1 2"/></svg><span>Panadería</span></button><button data-page="pizzaiolo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.5c5.5-3.3 11.5-3.3 17 0L12 21Z"/><path d="M5.6 10.6c4.2-2.2 8.6-2.2 12.8 0"/><circle cx="10" cy="12.5" r=".9"/><circle cx="14" cy="13.5" r=".9"/><circle cx="12" cy="16.5" r=".9"/></svg><span>Pizzaiolo</span></button><button data-page="costos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M6 17v-5M10 17V8M14 17v-7M18 17V5"/></svg><span>Costos</span></button><button data-page="herramientas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M7 20h10M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0Z"/><path d="m19 7-3 7a3 3 0 0 0 6 0Z"/></svg><span>Herramientas</span></button><button data-page="bitacora"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h11a2 2 0 0 1 2 2v16H8a2 2 0 0 1-2-2Z"/><path d="M6 17a2 2 0 0 1 2-2h11M10 7h6M10 10h4"/></svg><span>Bitácora</span></button><button data-page="acerca"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m12 5 2 7-2 7-2-7Z"/></svg><span>Proyecto</span></button><button data-page="cuenta"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>Mi cuenta</span></button></nav>
+  <nav aria-label="Navegación principal"><button class="active" data-page="inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span>Inicio</span></button><button data-page="barismo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h12v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4Z"/><path d="M17 11h2a2 2 0 0 1 0 4h-2M9 3c-1 1.2 1 1.8 0 3.5M13 3c-1 1.2 1 1.8 0 3.5"/></svg><span>Barismo</span></button><button data-page="panaderia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14c-1-3 1-6 4-7 2-1 4 0 5 1 2-1 5 0 6 3 1 3-1 6-4 7H8c-2 0-3-2-4-4Z"/><path d="m8 10 2 3m3-4 1 3m3 0 1 2"/></svg><span>Panadería</span></button><button data-page="pizzaiolo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.5c5.5-3.3 11.5-3.3 17 0L12 21Z"/><path d="M5.6 10.6c4.2-2.2 8.6-2.2 12.8 0"/><circle cx="10" cy="12.5" r=".9"/><circle cx="14" cy="13.5" r=".9"/><circle cx="12" cy="16.5" r=".9"/></svg><span>Pizzaiolo</span></button><button data-page="costos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M6 17v-5M10 17V8M14 17v-7M18 17V5"/></svg><span>Costos</span></button><button data-page="herramientas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M7 20h10M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0Z"/><path d="m19 7-3 7a3 3 0 0 0 6 0Z"/></svg><span>Herramientas</span></button><button data-page="bitacora"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h11a2 2 0 0 1 2 2v16H8a2 2 0 0 1-2-2Z"/><path d="M6 17a2 2 0 0 1 2-2h11M10 7h6M10 10h4"/></svg><span>Bitácora</span></button><button data-page="acerca"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m12 5 2 7-2 7-2-7Z"/></svg><span>Proyecto</span></button></nav>
   <div class="side-foot">CIENCIA · PRECISIÓN<br>DOMINIO GASTRONÓMICO</div>
 </aside>
 <main>
 <header class="topbar"><div><div class="crumb">NEXORA / <b id="crumb">Inicio</b></div><h1 id="heading">Controla cada variable.</h1></div><div class="status">DATOS EN ESTE DISPOSITIVO</div></header>
 <section id="inicio" class="section active">
-  <div class="hero">
-    <span class="tag">CIENCIA · MÉTODO · EXCELENCIA</span>
-    <h2>La intuición inspira.<br><em>La precisión transforma.</em></h2>
-    <p>Laboratorio gastronómico digital para formular, calibrar, costear y documentar. Del grano a la taza, de la harina al horno.</p>
-    <div class="hero-actions"><button class="btn" onclick="go('barismo')">Calibrar espresso</button><button class="btn alt" onclick="go('panaderia')">Crear una fórmula</button></div>
-    <div class="values"><span>CIENCIA</span><span>PRECISIÓN</span><span>DOMINIO</span></div>
-  </div>
-  <div class="discipline-grid" aria-label="Disciplinas">
-    <button class="discipline" onclick="go('barismo')"><span class="d-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h12v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4Z"/><path d="M17 11h2a2 2 0 0 1 0 4h-2M9 3c-1 1.2 1 1.8 0 3.5M13 3c-1 1.2 1 1.8 0 3.5"/></svg></span><b>Barismo</b><small>Calibración, catación y academia del café</small></button>
-    <button class="discipline" onclick="go('panaderia')"><span class="d-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14c-1-3 1-6 4-7 2-1 4 0 5 1 2-1 5 0 6 3 1 3-1 6-4 7H8c-2 0-3-2-4-4Z"/><path d="m8 10 2 3m3-4 1 3m3 0 1 2"/></svg></span><b>Panadería</b><small>Porcentaje panadero y producción</small></button>
-    <button class="discipline" onclick="go('pizzaiolo')"><span class="d-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.5c5.5-3.3 11.5-3.3 17 0L12 21Z"/><path d="M5.6 10.6c4.2-2.2 8.6-2.2 12.8 0"/><circle cx="10" cy="12.5" r=".9"/><circle cx="14" cy="13.5" r=".9"/><circle cx="12" cy="16.5" r=".9"/></svg></span><b>Pizzaiolo</b><small>Masas, fermentación y hornos</small></button>
-    <button class="discipline" onclick="go('costos')"><span class="d-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M6 17v-5M10 17V8M14 17v-7M18 17V5"/></svg></span><b>Costos</b><small>Catálogo de insumos y precio de venta</small></button>
-    <button class="discipline" onclick="go('herramientas')"><span class="d-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M7 20h10M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0Z"/><path d="m19 7-3 7a3 3 0 0 0 6 0Z"/></svg></span><b>Herramientas</b><small>Escalado de recetas y conversiones</small></button>
-    <button class="discipline" onclick="go('bitacora')"><span class="d-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h11a2 2 0 0 1 2 2v16H8a2 2 0 0 1-2-2Z"/><path d="M6 17a2 2 0 0 1 2-2h11M10 7h6M10 10h4"/></svg></span><b>Bitácora</b><small><span id="count">0 notas</span> registradas</small></button>
-  </div>
-  <div class="method" aria-label="Método de trabajo">
-    <div><b>01</b><strong>Medir</strong><span>Define cantidades, tiempos y rendimiento.</span></div>
-    <div><b>02</b><strong>Registrar</strong><span>Conserva los datos de cada ensayo.</span></div>
-    <div><b>03</b><strong>Comparar</strong><span>Cambia una variable y documenta el resultado.</span></div>
-  </div>
-  <div class="guide-strip"><div class="guide-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></div><div><b>Tus datos se quedan contigo</b><p>Todo lo que guardas vive en este dispositivo. Puedes exportarlo o borrarlo desde Proyecto.</p></div></div>
+<div class="hero hero-compact"><span class="tag">CIENCIA · MÉTODO · EXCELENCIA</span><h2>La intuición inspira.<br><em>La precisión transforma.</em></h2><p>Elige tu estación de trabajo.</p></div>
+<div class="home-grid"><button class="home-tile featured" onclick="go('barismo')"><span class="ht-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h12v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4Z"/><path d="M17 11h2a2 2 0 0 1 0 4h-2M9 3c-1 1.2 1 1.8 0 3.5M13 3c-1 1.2 1 1.8 0 3.5"/></svg></span><span class="ht-text"><b>Barismo</b><small>Calibrar espresso, catar y aprender café</small></span><span class="ht-arrow" aria-hidden="true">→</span></button><button class="home-tile" onclick="go('panaderia')"><span class="ht-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14c-1-3 1-6 4-7 2-1 4 0 5 1 2-1 5 0 6 3 1 3-1 6-4 7H8c-2 0-3-2-4-4Z"/><path d="m8 10 2 3m3-4 1 3m3 0 1 2"/></svg></span><span class="ht-text"><b>Panadería</b><small>Fórmulas con porcentaje panadero</small></span><span class="ht-arrow" aria-hidden="true">→</span></button><button class="home-tile" onclick="go('pizzaiolo')"><span class="ht-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.5c5.5-3.3 11.5-3.3 17 0L12 21Z"/><path d="M5.6 10.6c4.2-2.2 8.6-2.2 12.8 0"/><circle cx="10" cy="12.5" r=".9"/><circle cx="14" cy="13.5" r=".9"/><circle cx="12" cy="16.5" r=".9"/></svg></span><span class="ht-text"><b>Pizza</b><small>Masas, fermentación y hornos</small></span><span class="ht-arrow" aria-hidden="true">→</span></button><button class="home-tile" onclick="go('costos')"><span class="ht-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M6 17v-5M10 17V8M14 17v-7M18 17V5"/></svg></span><span class="ht-text"><b>Costos</b><small>Insumos, recetas y precio de venta</small></span><span class="ht-arrow" aria-hidden="true">→</span></button><button class="home-tile" onclick="go('herramientas')"><span class="ht-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M7 20h10M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0Z"/><path d="m19 7-3 7a3 3 0 0 0 6 0Z"/></svg></span><span class="ht-text"><b>Herramientas</b><small>Escalar recetas y convertir unidades</small></span><span class="ht-arrow" aria-hidden="true">→</span></button></div>
+<div class="home-more"><span class="side-label">También</span><button class="btn alt" onclick="go('bitacora')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h11a2 2 0 0 1 2 2v16H8a2 2 0 0 1-2-2Z"/><path d="M6 17a2 2 0 0 1 2-2h11M10 7h6M10 10h4"/></svg>Bitácora · <span id="count">0 notas</span></button></div>
 </section>
 
-<section id="barismo" class="section">
- 
-
- 
- <div class="nx-barista-dashboard">
-  <div class="nx-coffee-feature"><div class="nx-feature-copy"><div class="eyebrow">03 — Ciencia del café</div><h2>Barismo de<br>especialidad</h2><p>Desde la semilla hasta la taza. Aprende, calcula, practica y perfecciona cada extracción.</p><a class="btn nx-jump" href="#nx-barista-tools">Explorar herramientas <span>↗</span></a></div><div class="nx-feature-art" aria-hidden="true"><svg viewBox="0 0 200 160"><path d="M48 72h90v28a42 42 0 0 1-42 42h-6a42 42 0 0 1-42-42Z"/><path d="M138 82h12a14 14 0 0 1 0 28h-16"/><ellipse cx="93" cy="146" rx="70" ry="6"/><path d="M78 58c-8-10 8-14 0-26M96 58c-8-10 8-14 0-26M114 58c-8-10 8-14 0-26"/><path d="M58 84c20 6 50 6 70 0" opacity=".5"/></svg></div></div>
-  <div class="nx-quick-stats"><a href="#nx-calibration"><span class="nx-stat-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><span><small>CALIBRACIÓN</small><b>Tu espresso</b><em>Dosis · ratio · tiempo</em></span><span class="nx-arrow">›</span></a><a href="#nx-academy"><span class="nx-stat-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 8 10-4 10 4-10 4Z"/><path d="M6 10v5c3 2.5 9 2.5 12 0v-5M22 8v6"/></svg></span><span><small>ACADEMIA</small><b>Tu siguiente tema</b><em>10 áreas de estudio</em></span><span class="nx-arrow">›</span></a><a href="#nx-timer"><span class="nx-stat-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6M12 2v3"/></svg></span><span><small>PRÁCTICA</small><b>Reloj de barista</b><em>Control por fases</em></span><span class="nx-arrow">›</span></a></div>
- </div>
- <div id="nx-barista-tools" class="nx-tool-section"><div class="nx-section-heading"><div><span class="eyebrow">ESTACIÓN DE TRABAJO</span><h2>Herramientas de barismo</h2><p class="muted small">Acceso directo a los controles esenciales de tu estación.</p></div><span class="nx-count">01 — 04</span></div><div class="nx-tool-cards">
-  <a class="nx-tool-card" href="#nx-calibration"><div class="nx-tool-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M7 20h10M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0Z"/><path d="m19 7-3 7a3 3 0 0 0 6 0Z"/></svg></div><div class="nx-tool-caption"><b>Calibración</b><small>Precisión en cada gramo</small></div></a>
-  <a class="nx-tool-card" href="#nx-academy" onclick="setTimeout(()=>coffeeTopic('tools'),60)"><div class="nx-tool-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10l-2 5H9Z"/><path d="M8 8h8v5H8Z"/><path d="M6 21h12l-2-8H8Z"/><path d="M16 10h3l1-2"/></svg></div><div class="nx-tool-caption"><b>Molienda y equipo</b><small>Control de partículas</small></div></a>
-  <a class="nx-tool-card" href="#nx-calibration"><div class="nx-tool-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 14.8V5a2 2 0 0 0-4 0v9.8a4 4 0 1 0 4 0Z"/><path d="M12 10v6"/></svg></div><div class="nx-tool-caption"><b>Temperatura</b><small>Variables de extracción</small></div></a>
-  <a class="nx-tool-card" href="#nx-timer"><div class="nx-tool-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6M12 2v3"/></svg></div><div class="nx-tool-caption"><b>Cronómetro</b><small>Tiempo exacto por fase</small></div></a>
- </div></div>
- <div class="section-intro"><div class="eyebrow">Laboratorio de extracción</div><h2>Brew Clock · Calibración de espresso</h2><p class="muted small">Marca cada fase cuando suceda. Los tiempos se capturan al pulsar, no se estiman desde los objetivos.</p></div>
+<section id="barismo" class="section" data-view="calibrar">
+ <div class="section-intro"><div class="intro-art" aria-hidden="true"><svg viewBox="0 0 200 160"><path d="M48 72h90v28a42 42 0 0 1-42 42h-6a42 42 0 0 1-42-42Z"/><path d="M138 82h12a14 14 0 0 1 0 28h-16"/><ellipse cx="93" cy="146" rx="70" ry="6"/><path d="M78 58c-8-10 8-14 0-26M96 58c-8-10 8-14 0-26M114 58c-8-10 8-14 0-26"/><path d="M58 84c20 6 50 6 70 0" opacity=".5"/></svg></div><div class="eyebrow">Ciencia del café</div><h2>Barismo</h2><p>Calibra, cata y registra cada extracción. La teoría vive en Aprender.</p></div>
+ <div class="work-tabs" role="tablist" aria-label="Modo de Barismo"><button role="tab" data-mode="trabajar" class="active"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg><span>Trabajar</span></button><button role="tab" data-mode="aprender"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 8 10-4 10 4-10 4Z"/><path d="M6 10v5c3 2.5 9 2.5 12 0v-5M22 8v6"/></svg><span>Aprender</span></button></div>
+ <div class="sub-tabs" role="tablist" aria-label="Herramienta"><button data-view="calibrar" class="active"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6M12 2v3"/></svg>Calibrar</button><button data-view="catar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 5 7 8.5 7 12a7 7 0 0 1-14 0c0-3.5 4-7 7-12Z"/></svg>Catar</button><button data-view="historial"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h11a2 2 0 0 1 2 2v16H8a2 2 0 0 1-2-2Z"/><path d="M6 17a2 2 0 0 1 2-2h11M10 7h6M10 10h4"/></svg>Historial</button></div>
  <div class="pan-grid" id="nx-calibration">
-  <div class="card pan-half" id="nx-timer"><div class="eyebrow">01 / Cronómetro manual</div><h2>Control de fases</h2><div class="baker-avatar"><div class="avatar-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h12v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4Z"/><path d="M17 11h2a2 2 0 0 1 0 4h-2M9 3c-1 1.2 1 1.8 0 3.5M13 3c-1 1.2 1 1.8 0 3.5"/></svg></div><div><b>Tu asistente barista</b><div class="muted small" id="baristaPrompt">Prepara la dosis e inicia el cronómetro cuando estés listo.</div></div></div>
+  <div class="card pan-half" id="nx-timer" data-pane="calibrar"><div class="eyebrow">01 / Cronómetro manual</div><h2>Control de fases</h2><div class="baker-avatar"><div class="avatar-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h12v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4Z"/><path d="M17 11h2a2 2 0 0 1 0 4h-2M9 3c-1 1.2 1 1.8 0 3.5M13 3c-1 1.2 1 1.8 0 3.5"/></svg></div><div><b>Tu asistente barista</b><div class="muted small" id="baristaPrompt">Prepara la dosis e inicia el cronómetro cuando estés listo.</div></div></div>
    <div class="clock-face"><div style="text-align:center"><div class="clock-time" id="brewClock">00:00.0</div><div class="eyebrow" id="brewStage">EN ESPERA</div></div></div>
    <div class="stage-pills"><span class="stage-pill" id="pillStart">① Inicio</span><span class="stage-pill" id="pillPre">② Preinfusión</span><span class="stage-pill" id="pillExt">③ Extracción</span><span class="stage-pill" id="pillEnd">④ Final</span></div>
    <div class="timer-buttons"><button class="btn" id="brewStartBtn" onclick="brewStart()">Iniciar</button><button class="btn alt" id="brewPreBtn" onclick="brewMarkPre()" disabled>Marcar preinfusión</button><button class="btn alt" id="brewExtBtn" onclick="brewMarkExt()" disabled>Iniciar extracción</button><button class="btn alt" id="brewEndBtn" onclick="brewFinish()" disabled>Finalizar y guardar</button><button class="btn alt" onclick="brewReset()">↺ Reiniciar</button></div><div class="item" id="brewTimes"><b>Marcas de tiempo</b><small>Aún no hay marcas.</small></div>
   </div>
-  <div class="card pan-half"><div class="eyebrow">02 / Calibración</div><h2>Variables de extracción</h2><div class="row"><div class="field"><label for="coffeeDose">Dosis seca (g)</label><input id="coffeeDose" type="number" min=".1" step=".1" value="18"></div><div class="field"><label for="coffeeYield">Bebida en taza (g)</label><input id="coffeeYield" type="number" min=".1" step=".1" value="36"></div></div><div class="row"><div class="field"><label for="coffeeTemp">Temperatura (°C)</label><input id="coffeeTemp" type="number" min="1" max="110" step=".5" value="93"></div><div class="field"><label for="coffeeGrind">Molienda</label><select id="coffeeGrind"><option value="muy fina">Muy fina</option><option value="fina" selected>Fina</option><option value="media-fina">Media-fina</option><option value="media">Media</option></select></div></div><div class="row"><div class="field"><label for="targetTime">Tiempo total objetivo (s)</label><input id="targetTime" type="number" min="1" step="1" value="30"></div><div class="field"><label for="targetRatio">Ratio objetivo (1:x)</label><input id="targetRatio" type="number" min=".1" step=".1" value="2"></div></div><div class="field"><label for="coffeeTaste">Notas sensoriales</label><select id="coffeeTaste"><option value="balanced">Dulce y equilibrada</option><option value="sour">Acidez aguda / agrio</option><option value="bitter">Amargor persistente</option><option value="astringent">Secante / astringente</option><option value="watery">Débil / acuosa</option><option value="salty">Salada / poco desarrollada</option></select></div><div class="field"><label for="coffeeNotes">Observaciones</label><textarea id="coffeeNotes" maxlength="1000" placeholder="Origen, molino, flujo, distribución y ajustes"></textarea></div><div class="result"><div class="muted small">Ratio real (bebida ÷ dosis)</div><div class="pan-metric" id="actualRatio">1:2.0</div><div class="muted small" id="ratioHint">Objetivo 1:2</div></div><button class="btn" onclick="diagnoseBrew(true)">Analizar y guardar calibración</button></div>
-  <div class="card pan-full" id="nxCuppingLab">
+  <div class="card pan-half" data-pane="calibrar"><div class="eyebrow">02 / Calibración</div><h2>Variables de extracción</h2><div class="row"><div class="field"><label for="coffeeDose">Dosis seca (g)</label><input id="coffeeDose" type="number" min=".1" step=".1" value="18"></div><div class="field"><label for="coffeeYield">Bebida en taza (g)</label><input id="coffeeYield" type="number" min=".1" step=".1" value="36"></div></div><div class="row"><div class="field"><label for="coffeeTemp">Temperatura (°C)</label><input id="coffeeTemp" type="number" min="1" max="110" step=".5" value="93"></div><div class="field"><label for="coffeeGrind">Molienda</label><select id="coffeeGrind"><option value="muy fina">Muy fina</option><option value="fina" selected>Fina</option><option value="media-fina">Media-fina</option><option value="media">Media</option></select></div></div><div class="row"><div class="field"><label for="targetTime">Tiempo total objetivo (s)</label><input id="targetTime" type="number" min="1" step="1" value="30"></div><div class="field"><label for="targetRatio">Ratio objetivo (1:x)</label><input id="targetRatio" type="number" min=".1" step=".1" value="2"></div></div><div class="field"><label for="coffeeTaste">Notas sensoriales</label><select id="coffeeTaste"><option value="balanced">Dulce y equilibrada</option><option value="sour">Acidez aguda / agrio</option><option value="bitter">Amargor persistente</option><option value="astringent">Secante / astringente</option><option value="watery">Débil / acuosa</option><option value="salty">Salada / poco desarrollada</option></select></div><div class="field"><label for="coffeeNotes">Observaciones</label><textarea id="coffeeNotes" maxlength="1000" placeholder="Origen, molino, flujo, distribución y ajustes"></textarea></div><div class="result"><div class="muted small">Ratio real (bebida ÷ dosis)</div><div class="pan-metric" id="actualRatio">1:2.0</div><div class="muted small" id="ratioHint">Objetivo 1:2</div></div><button class="btn" onclick="diagnoseBrew(true)">Analizar y guardar calibración</button></div>
+  <div class="card pan-full" id="nxCuppingLab" data-pane="catar">
  <div class="nx-cupping-heading"><div><div class="eyebrow">03 / ANÁLISIS SENSORIAL</div><h3>Rueda dinámica de sabores</h3><p class="muted small">Selecciona una familia, profundiza en sus notas y construye el perfil sensorial de esta extracción.</p></div><span class="nx-sca-tag">SCA · CATACIÓN</span></div>
  <div class="nx-cupping-grid"><div class="nx-wheel-panel"><div class="nx-wheel-wrap"><svg id="nxFlavorWheel" viewBox="0 0 360 360" role="img" aria-label="Rueda interactiva de sabores de café"><circle cx="180" cy="180" r="48" fill="#20372a" stroke="#c9a96a" stroke-width="1.5"/><text x="180" y="174" text-anchor="middle" class="nx-wheel-center">NEXORA</text><text x="180" y="192" text-anchor="middle" class="nx-wheel-center-small">SENSORIAL</text></svg></div><div class="nx-wheel-crumb" id="nxWheelCrumb">Elige una familia en la rueda</div><div class="nx-wheel-selected" id="nxWheelSelected">Tus notas seleccionadas aparecerán aquí.</div><button class="btn alt tiny" type="button" onclick="nxClearFlavorNotes()">Limpiar notas</button></div>
  <div class="nx-wheel-detail"><h4 id="nxFlavorDetailTitle">Explora los sabores</h4><p id="nxFlavorDetailHelp" class="muted small">La rueda va de familias amplias a descriptores específicos. Selecciona una nota para añadirla a la ficha de cata.</p><div id="nxFlavorOptions" class="nx-flavor-options"></div><div class="field"><label for="nxFlavorIntensity">Intensidad percibida de la nota</label><input id="nxFlavorIntensity" type="range" min="1" max="5" value="3"><div class="muted small"><span id="nxFlavorIntensityLabel">3 / 5 · media</span></div></div><div class="field"><label for="nxFlavorFree">Descriptor propio</label><input id="nxFlavorFree" type="text" maxlength="60" placeholder="Ej. cacao nibs, jazmín, panela"><button type="button" class="btn alt tiny" onclick="nxAddCustomFlavor()">Añadir descriptor</button></div></div></div>
  <div class="nx-spider-section"><div><div class="eyebrow">04 / PERFIL DE CATACIÓN</div><h3>Araña sensorial · balance y uniformidad</h3><p class="muted small">Ajusta los controles de forma continua o con las flechas del teclado. Esta araña representa intensidad/percepción sensorial interna (0–10), no la puntuación afectiva oficial SCA/CVA ni una nota Q Grader.</p><div class="nx-slider-tools"><label for="nxSpiderSensitivity">Paso de ajuste</label><select id="nxSpiderSensitivity" onchange="nxSetSliderStep(this.value)"><option value="0.1">Fino · 0,1</option><option value="0.25">Preciso · 0,25</option><option value="0.5" selected>Estándar · 0,5</option><option value="1">Rápido · 1</option></select><button type="button" class="btn alt tiny" onclick="nxSetAllScores(5)">Neutralizar a 5</button><button type="button" class="btn alt tiny" onclick="nxSetAllScores(8)">Perfil alto · 8</button></div></div><div class="nx-spider-grid"><div class="nx-spider-chart"><svg id="nxCuppingSpider" viewBox="0 0 360 330" role="img" aria-label="Gráfica radar de atributos de catación"></svg><div class="nx-spider-summary" id="nxSpiderSummary">Registra las puntuaciones para ver el balance del perfil.</div><div class="nx-profile-result" id="nxProfileResult"><b>Perfil sensorial estimado</b><p>Selecciona notas y ajusta los atributos para obtener una lectura del perfil de taza.</p></div></div><div class="nx-score-controls" id="nxScoreControls"></div></div><div class="nx-score-actions"><button type="button" class="btn" onclick="nxSaveCuppingToNotes()">Añadir perfil a observaciones</button><button type="button" class="btn alt" onclick="nxResetCuppingScores()">Restablecer puntuaciones</button></div></div>
  </div>
-<div class="card pan-full"><div class="eyebrow">05 / Diagnóstico inteligente</div><h2>¿Qué está pasando en tu taza?</h2><div id="brewDiagnosis" class="diagnosis"><b>Esperando calibración</b><p class="muted">Registra las fases y añade las notas sensoriales para recibir hipótesis y un ajuste recomendado.</p></div></div>
-  <div class="card pan-full"><div class="eyebrow">06 / Historial</div><h2>Comparación de pruebas</h2><div id="brewHistory"></div><button class="btn alt" onclick="exportBrewHistory()">Exportar historial JSON</button></div>
+<div class="card pan-full" data-pane="calibrar"><div class="eyebrow">05 / Diagnóstico inteligente</div><h2>¿Qué está pasando en tu taza?</h2><div id="brewDiagnosis" class="diagnosis"><b>Esperando calibración</b><p class="muted">Registra las fases y añade las notas sensoriales para recibir hipótesis y un ajuste recomendado.</p></div></div>
+  <div class="card pan-full" data-pane="historial"><div class="eyebrow">06 / Historial</div><h2>Comparación de pruebas</h2><div id="brewHistory"></div><button class="btn alt" onclick="exportBrewHistory()">Exportar historial JSON</button></div>
  </div>
-<div class="coffee-academy" id="nx-academy">
+<div class="coffee-academy" id="nx-academy" data-pane="aprender">
  <div class="coffee-academy-head"><div><div class="eyebrow">NEXORA · ACADEMIA PROFESIONAL</div><h2>Del origen a la taza: laboratorio de café</h2><p>Explora cada tema por módulos. Las recetas son puntos de partida medibles; documenta lote, agua, molienda, temperatura, tiempo y evaluación sensorial para hacerlas repetibles.</p></div><div class="coffee-stamp"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h12v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4Z"/><path d="M17 11h2a2 2 0 0 1 0 4h-2M9 3c-1 1.2 1 1.8 0 3.5M13 3c-1 1.2 1 1.8 0 3.5"/></svg>COFFEE<br>SCIENCE</span></div></div>
  <div class="coffee-tabs" role="tablist" aria-label="Temas de la academia de barismo">
  <button class="coffee-tab active" data-ctopic="methods" onclick="coffeeTopic('methods')">01 · Métodos</button><button class="coffee-tab" data-ctopic="guatemala" onclick="coffeeTopic('guatemala')">02 · Guatemala</button><button class="coffee-tab" data-ctopic="green" onclick="coffeeTopic('green')">03 · Café verde</button><button class="coffee-tab" data-ctopic="roast" onclick="coffeeTopic('roast')">04 · Tueste</button><button class="coffee-tab" data-ctopic="process" onclick="coffeeTopic('process')">05 · Procesos</button><button class="coffee-tab" data-ctopic="sca" onclick="coffeeTopic('sca')">06 · SCA y competencia</button><button class="coffee-tab" data-ctopic="espresso" onclick="coffeeTopic('espresso')">07 · Espresso</button><button class="coffee-tab" data-ctopic="milk" onclick="coffeeTopic('milk')">08 · Leche</button><button class="coffee-tab" data-ctopic="tools" onclick="coffeeTopic('tools')">09 · Herramientas</button><button class="coffee-tab" data-ctopic="water" onclick="coffeeTopic('water')">10 · Agua y control</button>
@@ -1044,6 +1082,21 @@ if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostnam
   window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').then(r=>{r.update&&r.update()}).catch(e=>console.warn('NEXORA SW',e)));
   let reloaded=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloaded)return;reloaded=true;location.reload()});
 }
+
+/* NEXORA v5 · Barismo: Trabajar / Aprender */
+(function(){
+  const sec=document.getElementById('barismo');if(!sec)return;
+  const modes=sec.querySelectorAll('.work-tabs button'),views=sec.querySelectorAll('.sub-tabs button');
+  function set(v){sec.dataset.view=v;
+    modes.forEach(b=>{const on=(b.dataset.mode==='aprender')===(v==='aprender');b.classList.toggle('active',on);b.setAttribute('aria-selected',on)});
+    views.forEach(b=>b.classList.toggle('active',b.dataset.view===v));
+    try{localStorage.setItem('nexora-barismo-view',v)}catch(e){}}
+  let last='calibrar';
+  modes.forEach(b=>b.addEventListener('click',()=>set(b.dataset.mode==='aprender'?'aprender':last)));
+  views.forEach(b=>b.addEventListener('click',()=>{last=b.dataset.view;set(last)}));
+  let saved='calibrar';try{saved=localStorage.getItem('nexora-barismo-view')||'calibrar'}catch(e){}
+  if(saved!=='aprender')last=saved;set(saved);
+})();
 
 </script>
 </body>
