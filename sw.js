@@ -2,7 +2,7 @@
    - HTML y manifest: primero la red (las actualizaciones llegan solas).
    - Íconos y tipografías: primero la caché (carga instantánea y sin conexión).
    Al publicar cambios grandes, sube el número de VERSION. */
-const VERSION = 'nexora-v5';
+const VERSION = 'nexora-v9';
 const SHELL = [
   './',
   './index.html',
