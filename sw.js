@@ -2,7 +2,7 @@
    - HTML y manifest: primero la red (las actualizaciones llegan solas).
    - Íconos y tipografías: primero la caché (carga instantánea y sin conexión).
    Al publicar cambios grandes, sube el número de VERSION. */
-const VERSION = 'nexora-v10';
+const VERSION = 'nexora-v12';
 const SHELL = [
   './',
   './index.html',
@@ -15,9 +15,9 @@ const SHELL = [
   './apple-touch-icon.png',
   './favicon-32.png',
   './favicon-48.png',
-  './fonts/montserrat.woff2',
-  './fonts/playfair.woff2',
-  './fonts/playfair-italic.woff2'
+  './fonts/bricolage.woff2',
+  './fonts/big-shoulders.woff2',
+  './fonts/plex-mono.woff2'
 ];
 
 self.addEventListener('install', (event) => {

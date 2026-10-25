@@ -27,4 +27,4 @@ Todo se guarda en el dispositivo (localStorage). No hay servidor ni rastreo. Res
 
 ## Derechos
 © 2026 David Valle. Todos los derechos reservados (ver `LICENSE`).
-Tipografías Montserrat y Playfair Display bajo SIL Open Font License 1.1 (ver `fonts/`).
+Tipografías Big Shoulders Display, Bricolage Grotesque e IBM Plex Mono bajo SIL Open Font License 1.1 (ver `fonts/`). Manual de identidad: logo, colores y tipografía en el Design System "NEXORA Identidad".
