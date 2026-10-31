@@ -81,3 +81,6 @@ Todas las fotografías provienen de Pexels bajo la Licencia Pexels (uso gratuito
 | img/pizza/video-pizzaiolo.mp4 | Roman Odintsov | https://www.pexels.com/video/chef-stretching-pizza-dough-5899154/ |
 
 Fichas sin fotografía (usan ilustración NEXORA): Fermentación anaeróbica, Levadura comercial, Poolish.
+
+## Recetario de la casa
+Las imágenes de img/recetas/ son ilustraciones vectoriales originales de NEXORA (no fotografías).
