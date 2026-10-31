@@ -84,3 +84,8 @@ Fichas sin fotografía (usan ilustración NEXORA): Fermentación anaeróbica, Le
 
 ## Recetario de la casa
 Las imágenes de img/recetas/ son ilustraciones vectoriales originales de NEXORA (no fotografías).
+
+## Mapa y regiones
+- Mapa de Guatemala: © colaboradores de OpenStreetMap (ODbL 1.0), vía geoBoundaries (gbOpen GTM ADM1).
+- Escenas de img/gt/: ilustraciones originales de NEXORA.
+- Datos de regiones: Anacafé (guatemalancoffees.com · Green Book).
