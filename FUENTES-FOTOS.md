@@ -89,3 +89,6 @@ Las imágenes de img/recetas/ son ilustraciones vectoriales originales de NEXORA
 - Mapa de Guatemala: © colaboradores de OpenStreetMap (ODbL 1.0), vía geoBoundaries (gbOpen GTM ADM1).
 - Escenas de img/gt/: ilustraciones originales de NEXORA.
 - Datos de regiones: Anacafé (guatemalancoffees.com · Green Book).
+
+## Videos (img/barismo/)
+Cápsulas editadas por NEXORA a partir de videos proporcionados por David Valle: portada, marca de agua y cierre de marca; se recortó la invitación final de redes.
